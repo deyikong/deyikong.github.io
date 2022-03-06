@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   
   
-  <title>Start My Algorithm Journey | Deyi Kong&#39;s personal site</title>
+  <title>Fundamental | Deyi Kong&#39;s personal site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="今天开始准备刷题，学习算法。 这个blog用来记录我的历程。">
+  <meta name="description" content="Loop Invariants Initialization: It’s true prior to the first iteration of the loop(variable initializations before the loop) Maintenance: If it’s true before an iteration of the loop, it remains true">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Start My Algorithm Journey">
-<meta property="og:url" content="http://example.com/2022/03/05/start/index.html">
+<meta property="og:title" content="Fundamental">
+<meta property="og:url" content="http://example.com/2022/03/06/Fundamental/index.html">
 <meta property="og:site_name" content="Deyi Kong&#39;s personal site">
-<meta property="og:description" content="今天开始准备刷题，学习算法。 这个blog用来记录我的历程。">
+<meta property="og:description" content="Loop Invariants Initialization: It’s true prior to the first iteration of the loop(variable initializations before the loop) Maintenance: If it’s true before an iteration of the loop, it remains true">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-05T23:12:14.000Z">
+<meta property="article:published_time" content="2022-03-06T01:51:47.000Z">
 <meta property="article:modified_time" content="2022-03-06T03:21:38.184Z">
 <meta property="article:author" content="Deyi Kong">
 <meta name="twitter:card" content="summary">
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-start" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Fundamental" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="" class="article-date">
-  <time class="dt-published" datetime="2022-03-05T23:12:14.000Z" itemprop="datePublished">2022-03-05</time>
+  <time class="dt-published" datetime="2022-03-06T01:51:47.000Z" itemprop="datePublished">2022-03-05</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Start My Algorithm Journey
+      Fundamental
     </h1>
   
 
@@ -95,12 +95,38 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>今天开始准备刷题，学习算法。 这个blog用来记录我的历程。 </p>
+        <h3 id="Loop-Invariants"><a href="#Loop-Invariants" class="headerlink" title="Loop Invariants"></a>Loop Invariants</h3><ul>
+<li><em>Initialization</em>: It’s true prior to the first iteration of the loop(variable initializations before the loop)</li>
+<li><em>Maintenance</em>: If it’s true before an iteration of the loop, it remains true before the next iteration(logic inside the loop) </li>
+<li><em>Termination</em>: When the loop terminates, the invariant gives us a useful property that helps show that the algorithm is correct(condition to stop the loop)</li>
+</ul>
+<p>Initialization -&gt; base case, Maintenance -&gt; inductive step, Termination -&gt; Condition; Termination usually involves loop invariants. In math, inductive steps carries on infinitely, but in here, we stop the loop when the termination happens. </p>
+<p><strong>Notes:</strong> practice always come up with the loop invariants before you start writing the loop. </p>
+<h3 id="Running-time"><a href="#Running-time" class="headerlink" title="Running time"></a>Running time</h3><p>Big O notation</p>
+<h3 id="Worst-cast-and-average-case-analysis"><a href="#Worst-cast-and-average-case-analysis" class="headerlink" title="Worst-cast and average-case analysis"></a>Worst-cast and average-case analysis</h3><p>Worst-Case</p>
+<ul>
+<li>an upper bound on teh running time</li>
+<li>for some algorithms, the worst case occurs fairly often. Like searching a database for a piece of missing data.</li>
+</ul>
+<h3 id="Designing-Algorithms"><a href="#Designing-Algorithms" class="headerlink" title="Designing Algorithms"></a>Designing Algorithms</h3><p>Principles: </p>
+<ul>
+<li>Incremental: e.g.: insertion sort, insert single emlement into its proper place.</li>
+<li>Divide and conquer: <ul>
+<li><em>recurisve</em> is from this principle</li>
+<li>three steps:<ul>
+<li><strong>Divide</strong> into smaller subproblems</li>
+<li><strong>Conquer</strong> the subproblems by solving them recursively</li>
+<li><strong>Combine</strong> the solution</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/05/start/" data-id="cl0epk5ft00049lop0yzs6yb6" data-title="Start My Algorithm Journey" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Fundamental/" data-id="cl0epk5fp00019lopbdux3pzz" data-title="Fundamental" class="article-share-link">Share</a>
       
       
       
@@ -110,15 +136,11 @@
     
 <nav id="article-nav">
   
-    <a href="../../06/Sorting/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Sorting
-        
-      </div>
-    </a>
   
+    <a href="../Sorting/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Sorting</div>
+    </a>
   
 </nav>
 
@@ -155,15 +177,15 @@
       <ul>
         
           <li>
-            <a href="../../06/Fundamental/">Fundamental</a>
+            <a href="">Fundamental</a>
           </li>
         
           <li>
-            <a href="../../06/Sorting/">Sorting</a>
+            <a href="../Sorting/">Sorting</a>
           </li>
         
           <li>
-            <a href="">Start My Algorithm Journey</a>
+            <a href="../../05/start/">Start My Algorithm Journey</a>
           </li>
         
       </ul>
