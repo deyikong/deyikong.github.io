@@ -113,11 +113,12 @@
 <li>O(n^2)</li>
 </ul>
 <p><em><a target="_blank" rel="noopener" href="https://leetcode.com/problems/3sum/">https://leetcode.com/problems/3sum/</a></em></p>
+<h2 id="Four-Sum"><a href="#Four-Sum" class="headerlink" title="Four Sum"></a>Four Sum</h2><p><em><a target="_blank" rel="noopener" href="https://leetcode.com/problems/4sum/">https://leetcode.com/problems/4sum/</a></em></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Sum/" data-id="cl0ezbzqj00059moi786cdk6a" data-title="Sum" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Sum/" data-id="cl0fqtqzb000595opb8hf7rqn" data-title="Sum" class="article-share-link">Share</a>
       
       
       
@@ -155,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Binary-Search/" data-id="cl0ezbzqc00019moiayla5tlg" data-title="Binary Search" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Binary-Search/" data-id="cl0fqtqz6000195oparlf01ma" data-title="Binary Search" class="article-share-link">Share</a>
       
       
       
@@ -225,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Fundamental/" data-id="cl0ezbzqg00039moidnzb752k" data-title="Fundamental" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Fundamental/" data-id="cl0fqtqz9000395op7kl76iy3" data-title="Fundamental" class="article-share-link">Share</a>
       
       
       
@@ -282,12 +283,19 @@
 </ul>
 <h2 id="Psudo-code"><a href="#Psudo-code" class="headerlink" title="Psudo code"></a>Psudo code</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A, p, r)</span><br><span class="line">if p &lt; r</span><br><span class="line">    q = [p + r] / 2</span><br><span class="line">    MergeSort(A, p, q)</span><br><span class="line">    MergeSort(A, q + 1, r)</span><br><span class="line">    Merge(A, p, q, r)</span><br><span class="line"></span><br><span class="line">Merge(A, p, q, r)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
 
-
+<p>Merge Two sorted arrays, in place. </p>
+<p>Keys: </p>
+<ul>
+<li>in order not to override, it’s best to move from right to left. so the condition need to check which bigger instead of who’s smaller </li>
+<li>my first thought was moving all the elements of nums1 to the end and go from left. it works too, but there’s more to write.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span>[] nums1, <span class="type">int</span> m, <span class="type">int</span>[] nums2, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">p</span> <span class="operator">=</span> m - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">q</span> <span class="operator">=</span> n - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> m + n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="comment">// positive condition: when will we need to </span></span><br><span class="line">        <span class="comment">// swap with nums1</span></span><br><span class="line">        <span class="comment">// 1. when nums1 still has elements and nums2 is out</span></span><br><span class="line">        <span class="comment">// 2. when nums1 still has elements and nums1[p] &gt; nums2[q]</span></span><br><span class="line">        <span class="comment">// notes: it&#x27;s &quot;&gt;&quot; because we go from right to left. </span></span><br><span class="line">        <span class="keyword">if</span> (p &gt;= <span class="number">0</span> &amp;&amp; (q &lt; <span class="number">0</span> || (nums1[p] &gt; nums2[q]))) &#123;</span><br><span class="line">            nums1[i] = nums1[p--];</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        nums1[i] = nums2[q--];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-sorted-array/">https://leetcode.com/problems/merge-sorted-array/</a></em></p>
 <h1 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Sorting/" data-id="cl0ezbzqi00049moigqmfgtsw" data-title="Sorting" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Sorting/" data-id="cl0fqtqza000495op26wt909g" data-title="Sorting" class="article-share-link">Share</a>
       
       
       
@@ -326,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/05/start/" data-id="cl0ezbzqk00069moiff1e975a" data-title="Start My Algorithm Journey" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/05/start/" data-id="cl0fqtqzc000695opaouw0o2e" data-title="Start My Algorithm Journey" class="article-share-link">Share</a>
       
       
       
