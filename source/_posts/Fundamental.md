@@ -22,7 +22,7 @@ Worst-Case
 
 ### Designing Algorithms
 Principles: 
-- Incremental: e.g.: insertion sort, insert single emlement into its proper place.
+- Incremental: e.g.: insertion sort, insert single element into its proper place.
 - Divide and conquer: 
   * *recurisve* is from this principle
   * three steps:
