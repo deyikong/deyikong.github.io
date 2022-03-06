@@ -207,5 +207,31 @@ Merge(A, p, q, r)
     
 ```
 
+Merge Two sorted arrays, in place. 
+
+Keys: 
+- in order not to override, it's best to move from right to left. so the condition need to check which bigger instead of who's smaller 
+- my first thought was moving all the elements of nums1 to the end and go from left. it works too, but there's more to write. 
+
+```java
+public void merge(int[] nums1, int m, int[] nums2, int n) {
+    int p = m - 1;
+    int q = n - 1;
+    
+    for (int i = m + n - 1; i >= 0; i--) {
+        // positive condition: when will we need to 
+        // swap with nums1
+        // 1. when nums1 still has elements and nums2 is out
+        // 2. when nums1 still has elements and nums1[p] > nums2[q]
+        // notes: it's ">" because we go from right to left. 
+        if (p >= 0 && (q < 0 || (nums1[p] > nums2[q]))) {
+            nums1[i] = nums1[p--];
+            continue;
+        }
+        nums1[i] = nums2[q--];
+    }
+}
+```
+*https://leetcode.com/problems/merge-sorted-array/*
 
 # Quick Sort
