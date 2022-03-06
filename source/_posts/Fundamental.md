@@ -29,3 +29,6 @@ Principles:
     + **Divide** into smaller subproblems
     + **Conquer** the subproblems by solving them recursively
     + **Combine** the solution
+  * analysis
+    + **recurrence equation** : running time of a recursion call. 
+    

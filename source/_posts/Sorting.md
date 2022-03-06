@@ -190,6 +190,7 @@ class GFG
 
 # Merge Sort
 
+![Merge Sort](Sorting/Merge-Sort-Tutorial.png)
 ## Keys
 - Divide and conquer 
 
