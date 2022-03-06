@@ -17,7 +17,7 @@ Keys:
 
 *https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/*
 
-## Three Sum (not allow duplicates) (sorted)
+## Three Sum (not allow duplicates) (sorted or not)
 Keys: 
 - two pointer
 - hashset
