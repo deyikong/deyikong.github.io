@@ -31,4 +31,4 @@ Principles:
     + **Combine** the solution
   * analysis
     + **recurrence equation** : running time of a recursion call. 
-    
+  * binary search  
