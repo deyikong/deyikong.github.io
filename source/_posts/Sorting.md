@@ -12,6 +12,8 @@ tags:
 - insert in sorted array
 
 ## Code
+
+### array
 ```java  
 import java.util.*;
 class GFG
@@ -63,6 +65,98 @@ public static void main(String[] args)
 }
 
 ```
+
+### Singly linkedlist 
+
+- My solution (not optimal, hard to remember)
+```java 
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode insertionSortList(ListNode head) {
+        //base case:
+        if (head == null) return head;
+       // loop invariants: 
+        // for each i in [0, n], list before head[i] is sorted, after is not sorted. 
+        // initialization: i = 1, becasue head[0] is already sorted by itself
+        // maintenance: as i++, we need to insert head[i] into it's right place.
+        // temination condition: when it passes all the elements
+        ListNode local = head.next;
+        int localTraverseCount = 1;
+        ListNode localPrev = head;
+        ListNode headCopy = head;
+        
+        while(local != null) {
+             // break current node
+              localPrev.next = local.next;
+            ListNode next = local.next;
+            
+           // if it's the smallest 
+          if (local.val < headCopy.val) {
+              local.next = headCopy; 
+              headCopy = local;
+          } else {
+               // loop through the first part to insert the node 
+            ListNode insertTraverse = headCopy;
+            int insertTraverseCount = 1;
+                //local invariants: insertTraverse.val is smaller than local.val but insertTraverse.next.val is bigger
+                while (insertTraverseCount < localTraverseCount && insertTraverse.val < local.val && insertTraverse.next.val < local.val) {
+                  insertTraverse = insertTraverse.next;  
+                    insertTraverseCount++;
+                }
+                // termination: it's own place, or found a node whose .next.val is bigger
+                // insert local after insertTraverse
+                   ListNode temp = insertTraverse.next; 
+                insertTraverse.next = local;
+                local.next = temp;
+                if (insertTraverseCount == localTraverseCount) {
+                   localPrev = local; 
+                 }
+              } 
+              localTraverseCount++;
+            local = next;
+        }
+        
+        return headCopy;
+    }
+}
+```
+- given solutions: 
+```java 
+    public ListNode insertionSortList(ListNode head) {
+        ListNode dummy = new ListNode();
+        ListNode curr = head;
+
+        while (curr != null) {
+            // At each iteration, we insert an element into the resulting list.
+            ListNode prev = dummy;
+
+            // find the position to insert the current node
+            while (prev.next != null && prev.next.val < curr.val) {
+                prev = prev.next;
+            }
+
+            ListNode next = curr.next;
+            // insert the current node to the new list
+            curr.next = prev.next;
+            prev.next = curr;
+
+            // moving on to the next iteration
+            curr = next;
+        }
+
+        return dummy.next;
+    }
+```
+*https://leetcode.com/problems/insertion-sort-list/*
 # Selection Sort
 
 ## Keys
@@ -210,8 +304,10 @@ Merge(A, p, q, r)
 Merge Two sorted arrays, in place. 
 
 Keys: 
+- principle: three pointers
 - in order not to override, it's best to move from right to left. so the condition need to check which bigger instead of who's smaller 
 - my first thought was moving all the elements of nums1 to the end and go from left. it works too, but there's more to write. 
+- how to write the condition is worth memorizing
 
 ```java
 public void merge(int[] nums1, int m, int[] nums2, int n) {
