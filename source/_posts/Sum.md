@@ -26,6 +26,12 @@ Keys:
 
 *https://leetcode.com/problems/3sum/*
 
+## Three Sum Smaller 
+*https://leetcode.com/problems/3sum-smaller/* (To be reviewed)
+
+## Three Sum Closest
+*https://leetcode.com/problems/3sum-closest/* (To be reviewed)
+
 ## Four Sum 
 
 *https://leetcode.com/problems/4sum/*
