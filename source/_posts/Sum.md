@@ -20,6 +20,7 @@ Keys:
 ## Three Sum (not allow duplicates) (sorted or not)
 Keys: 
 - two pointer
+  - outer loop to traverse first occurence
 - hashset
 - no-sort
 - O(n^2)

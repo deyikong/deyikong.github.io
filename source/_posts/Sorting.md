@@ -446,6 +446,9 @@ Time Complexity: O(nlog(n))
 # Quick Sort
 
 ## Psudo
+<details> 
+    <summary>Psudo</summary>
+    
 ```
 PARTITION(A, p, r) 
  x = A[r]
@@ -482,5 +485,72 @@ TAIL-RECURSIVE-QUICKSORT(A, p, r)
       TAIL-RECURSIVE-QUICKSORT(A, q + 1, r)
       r = q - 1
 ```
+</details>
  
+## Sorting related problems
+
+Merge Intervals
+- https://leetcode.com/problems/merge-intervals/
+- Keys: 
+    - sort the array based on the first value, then use a stack to linear scan back.
+    - <details> 
+    <summary> My attempt</summary>
+```java 
+class Solution {
+    public int[][] merge(int[][] intervals) {
+        // sort intervals based on the start time
+        // quick sort it
+        quicksort(intervals, 0, intervals.length - 1);
+        for(int[] interval : intervals) {
+          System.out.println(interval[0] + " " + interval[1]);
+        }
+        Stack<int[]> stack = new Stack();
+        for (int[] interval: intervals) {
+            if (stack.isEmpty() || interval[0] > stack.peek()[1]) {
+                stack.push(interval);
+            } else {
+               stack.peek()[1] = Math.max(interval[1],stack.peek()[1]); 
+            }
+        }
+        int[][] ret = new int[stack.size()][2];
+        int i = stack.size() - 1;
+        while(!stack.isEmpty()) {
+            ret[i--] = stack.pop();
+        }
+       return ret; 
+    }
+    private void quicksort(int[][] intervals, int q, int r) {
+       while (q < r)  {
+           int p = partition(intervals, q, r);
+           if (q - p < r - p) {
+             quicksort(intervals, q, p - 1);
+             q = p + 1;
+           } else {
+             quicksort(intervals, p + 1, r);
+             r = p - 1;
+           }
+       }
+    }
+    
+    private int partition(int[][] intervals, int q, int r) {
+       int[] pi = intervals[r];
+       int i = q - 1; 
+        for (int j = q; j < r; j++) {
+            if (intervals[j][0] <= pi[0]) {
+                i++;
+                swap(intervals, i, j);
+            }
+        }
+        swap(intervals, i + 1, r);
+        return i + 1;
+    }
+    
+    private void swap(int[][] intervals, int i, int j) {
+        int[] temp = intervals[i];
+        intervals[i] = intervals[j];
+        intervals[j] = temp;
+    }
+}
+```
+   </details>  
 
