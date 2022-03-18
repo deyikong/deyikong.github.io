@@ -71,6 +71,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Binary-Search-Tree" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/18/Binary-Search-Tree/" class="article-date">
+  <time class="dt-published" datetime="2022-03-18T06:48:05.000Z" itemprop="datePublished">2022-03-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/03/18/Binary-Search-Tree/">Binary Search Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h2><h3 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h3><ul>
+<li>pre order traverse </li>
+<li>in order traverse -&gt; sorted array</li>
+<li>post order traverse</li>
+</ul>
+<h3 id="Searching"><a href="#Searching" class="headerlink" title="Searching"></a>Searching</h3><p>Recursive</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TREE-SEARCH(x, k)</span><br><span class="line">    if x == NIL or k == x.key</span><br><span class="line">        return x</span><br><span class="line">    if x &lt; x.key</span><br><span class="line">        return TREE-SEARCH(x.left, k)</span><br><span class="line">    else return TREE-SEARCH(x.right, k)</span><br></pre></td></tr></table></figure>
+<p>Iterative</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ITERATIVE-TREE-SEARCH(x, k)</span><br><span class="line">    while x != NIL or k != x.key</span><br><span class="line">        if k &lt; x.key</span><br><span class="line">            x = x.left</span><br><span class="line">        else x = x.right</span><br><span class="line">    return x </span><br></pre></td></tr></table></figure>
+<h3 id="minimum-and-maximum"><a href="#minimum-and-maximum" class="headerlink" title="minimum and maximum"></a>minimum and maximum</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TREE-MINIMUM(x)</span><br><span class="line">    while x != NIL AND x.left != NIL</span><br><span class="line">        x = x.left</span><br><span class="line">    return x </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TREE-MAXIMUM(x)</span><br><span class="line">    while x != NIL AND x.right != NIL</span><br><span class="line">        x = x.right</span><br><span class="line">    return x </span><br></pre></td></tr></table></figure>
+<h3 id="successor-and-predecessor"><a href="#successor-and-predecessor" class="headerlink" title="successor and predecessor"></a>successor and predecessor</h3><p> Successor</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TREE-SUCCESSOR(x)</span><br><span class="line">    // if this node has a right subtree, just return the minimum in the right subtree</span><br><span class="line">    if x!= NIL AND x.right != NIL</span><br><span class="line">        return TREE_MINIMUM(x)</span><br><span class="line">    // if this node doesn&#x27;t have a right subtree, go up and find the first parent that&#x27;s the left child of its parent </span><br><span class="line">    y = x.parent</span><br><span class="line">    while y != NIL AND y.right = x</span><br><span class="line">        x = y</span><br><span class="line">        y = y.plarent</span><br><span class="line">    return y</span><br></pre></td></tr></table></figure>
+<p> predecessor</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TREE-PREDECESSOR(x)</span><br><span class="line">    // if this node has a left subtree, just return the maximum in the left subtree</span><br><span class="line">    if x!= NIL AND x.left != NIL</span><br><span class="line">        return TREE_MINIMUM(x)</span><br><span class="line">    // if this node doesn&#x27;t have a left subtree, go up and find the first parent that&#x27;s the right child of its parent </span><br><span class="line">    y = x.parent</span><br><span class="line">    while y != NIL AND y.left = x</span><br><span class="line">        x = y</span><br><span class="line">        y = y.plarent</span><br><span class="line">    return y</span><br></pre></td></tr></table></figure>
+
+<p>####insertion<br>The key point is to find the NIL location, keep the parent, and then append it to the parent<br>loop invariant: p is always the parent of x</p>
+<ul>
+<li>maintain p is the parent of x </li>
+<li>termination: x is NIL<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">TREE-INSERT(T, z)</span><br><span class="line">    p = NIL</span><br><span class="line">    x = T.root</span><br><span class="line">    while x != NIL</span><br><span class="line">        p = x.parent</span><br><span class="line">        if z.key &gt; x.key</span><br><span class="line">            x = x.right</span><br><span class="line">        else x = x.left</span><br><span class="line">    if p = NIL </span><br><span class="line">        T.root = z // Tree is empty</span><br><span class="line">    elseif z.key &gt; p.key</span><br><span class="line">        p.right = z</span><br><span class="line">    else p.left = z</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/18/Binary-Search-Tree/" data-id="cl0w2w0u400018joz33zw7vut" data-title="Binary Search Tree" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Sum" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/03/06/Sum/" class="article-date">
@@ -123,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Sum/" data-id="cl0vz9rio0005b0npgorf1pd2" data-title="Sum" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Sum/" data-id="cl0w2w0ua00068joz2taz5ec2" data-title="Sum" class="article-share-link">Share</a>
       
       
       
@@ -157,32 +216,34 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h2><h2 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h2><h2 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h2><h3 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h3><ul>
-<li>pre order traverse </li>
-<li>in order traverse -&gt; sorted array</li>
-<li>post order traverse</li>
+        <h2 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h2><h2 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h2><ul>
+<li>get rid of a side that’s not what we are looking for</li>
+<li>whether you can git rid of the border depending on if the border might be the final answer</li>
+<li>use the smallest sample size(size &#x3D; 1) to test if the condition allows entering the while loop, and test if the condition allows exiting the loop</li>
 </ul>
-<h3 id="Searching"><a href="#Searching" class="headerlink" title="Searching"></a>Searching</h3><p>Recursive</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TREE-SEARCH(x, k)</span><br><span class="line">    if x == NIL or k == x.key</span><br><span class="line">        return x</span><br><span class="line">    if x &lt; x.key</span><br><span class="line">        return TREE-SEARCH(x.left, k)</span><br><span class="line">    else return TREE-SEARCH(x.right, k)</span><br></pre></td></tr></table></figure>
-<p>Iterative</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ITERATIVE-TREE-SEARCH(x, k)</span><br><span class="line">    while x != NIL or k != x.key</span><br><span class="line">        if k &lt; x.key</span><br><span class="line">            x = x.left</span><br><span class="line">        else x = x.right</span><br><span class="line">    return x </span><br></pre></td></tr></table></figure>
-<h3 id="minimum-and-maximum"><a href="#minimum-and-maximum" class="headerlink" title="minimum and maximum"></a>minimum and maximum</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TREE-MINIMUM(x)</span><br><span class="line">    while x != NIL AND x.left != NIL</span><br><span class="line">        x = x.left</span><br><span class="line">    return x </span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TREE-MAXIMUM(x)</span><br><span class="line">    while x != NIL AND x.right != NIL</span><br><span class="line">        x = x.right</span><br><span class="line">    return x </span><br></pre></td></tr></table></figure>
-<h3 id="successor-and-predecessor"><a href="#successor-and-predecessor" class="headerlink" title="successor and predecessor"></a>successor and predecessor</h3><p> Successor</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TREE-SUCCESSOR(x)</span><br><span class="line">    // if this node has a right subtree, just return the minimum in the right subtree</span><br><span class="line">    if x!= NIL AND x.right != NIL</span><br><span class="line">        return TREE_MINIMUM(x)</span><br><span class="line">    // if this node doesn&#x27;t have a right subtree, go up and find the first parent that&#x27;s the left child of its parent </span><br><span class="line">    y = x.parent</span><br><span class="line">    while y != NIL AND y.right = x</span><br><span class="line">        x = y</span><br><span class="line">        y = y.plarent</span><br><span class="line">    return y</span><br></pre></td></tr></table></figure>
-<p> predecessor</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TREE-PREDECESSOR(x)</span><br><span class="line">    // if this node has a left subtree, just return the maximum in the left subtree</span><br><span class="line">    if x!= NIL AND x.left != NIL</span><br><span class="line">        return TREE_MINIMUM(x)</span><br><span class="line">    // if this node doesn&#x27;t have a left subtree, go up and find the first parent that&#x27;s the right child of its parent </span><br><span class="line">    y = x.parent</span><br><span class="line">    while y != NIL AND y.left = x</span><br><span class="line">        x = y</span><br><span class="line">        y = y.plarent</span><br><span class="line">    return y</span><br></pre></td></tr></table></figure>
-
-<p>####insertion<br>The key point is to find the NIL location, keep the parent, and then append it to the parent<br>loop invariant: p is always the parent of x</p>
-<ul>
-<li>maintain p is the parent of x </li>
-<li>termination: x is NIL<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">TREE-INSERT(T, z)</span><br><span class="line">    p = NIL</span><br><span class="line">    x = T.root</span><br><span class="line">    while x != NIL</span><br><span class="line">        p = x.parent</span><br><span class="line">        if z.key &gt; x.key</span><br><span class="line">            x = x.right</span><br><span class="line">        else x = x.left</span><br><span class="line">    if p = NIL </span><br><span class="line">        T.root = z // Tree is empty</span><br><span class="line">    elseif z.key &gt; p.key</span><br><span class="line">        p.right = z</span><br><span class="line">    else p.left = z</span><br></pre></td></tr></table></figure></li>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><ul>
+<li>closet to a target number(stop at two elements)</li>
+<li>kth closet to a target number<ul>
+<li>find the closest, then traverse left or right</li>
+</ul>
+</li>
+<li>find the first occurrence of a number <ul>
+<li>1,2,2,2 find 2; </li>
+<li>stop at two element</li>
+<li>don’t stop at the target, keep moving the left: <code>l = m</code>, not <code>m - 1</code> because can’t get rid of m</li>
+</ul>
+</li>
+<li>sorted array of unknown size<ul>
+<li>double the range to find the end index first</li>
+<li>then try to find it in the found range</li>
+</ul>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Binary-Search/" data-id="cl0vz9rig0001b0np5pi70u28" data-title="Binary Search" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Binary-Search/" data-id="cl0w2w0u700038joz08680vzh" data-title="Binary Search" class="article-share-link">Share</a>
       
       
       
@@ -252,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Fundamental/" data-id="cl0vz9ril0003b0np9v5x8b8h" data-title="Fundamental" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Fundamental/" data-id="cl0w2w0u900048joz6sb721ax" data-title="Fundamental" class="article-share-link">Share</a>
       
       
       
@@ -356,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Sorting/" data-id="cl0vz9rin0004b0np68o07b9i" data-title="Sorting" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Sorting/" data-id="cl0w2w0ua00058joz0919cpmq" data-title="Sorting" class="article-share-link">Share</a>
       
       
       
@@ -395,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/05/start/" data-id="cl0vz9rip0006b0npcmvra2i3" data-title="Start My Algorithm Journey" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/05/start/" data-id="cl0w2w0ub00078jozgkro5u53" data-title="Start My Algorithm Journey" class="article-share-link">Share</a>
       
       
       
@@ -438,6 +499,10 @@
       <ul>
         
           <li>
+            <a href="/2022/03/18/Binary-Search-Tree/">Binary Search Tree</a>
+          </li>
+        
+          <li>
             <a href="/2022/03/06/Sum/">Sum</a>
           </li>
         
@@ -451,10 +516,6 @@
         
           <li>
             <a href="/2022/03/06/Sorting/">Sorting</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/05/start/">Start My Algorithm Journey</a>
           </li>
         
       </ul>
