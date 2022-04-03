@@ -17,9 +17,10 @@ tags:
     - find the closest, then traverse left or right
 - find the first occurrence of a number 
     - 1,2,2,2 find 2; 
-    - stop at two element
+    - stop at two elements
     - don't stop at the target, keep moving the left: `l = m`, not `m - 1` because can't get rid of m
 - sorted array of unknown size
     - double the range to find the end index first
     - then try to find it in the found range 
-
+- maximum profit in job scheduling(hard): https://leetcode.com/problems/maximum-profit-in-job-scheduling/
+    - dp + binary search. top down + bottom up. 
