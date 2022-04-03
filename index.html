@@ -71,6 +71,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Trie" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/03/Trie/" class="article-date">
+  <time class="dt-published" datetime="2022-04-03T03:31:32.000Z" itemprop="datePublished">2022-04-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/03/Trie/">Trie</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>##Search Suggestion System: <a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-suggestions-system/">https://leetcode.com/problems/search-suggestions-system/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Custom class Trie with function to get 3 words starting with given prefix</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Trie</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Node definition of a trie</span></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isWord</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">        List&lt;Node&gt; children = Arrays.asList(<span class="keyword">new</span> <span class="title class_">Node</span>[<span class="number">26</span>]);</span><br><span class="line">    &#125;;</span><br><span class="line">    Node Root, curr;</span><br><span class="line">    List&lt;String&gt; resultBuffer;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Runs a DFS on trie starting with given prefix and adds all the words in the resultBuffer, limiting result size to 3</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">dfsWithPrefix</span><span class="params">(Node curr, String word)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (resultBuffer.size() == <span class="number">3</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (curr.isWord)</span><br><span class="line">            resultBuffer.add(word);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Run DFS on all possible paths.</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&#x27;a&#x27;</span>; c &lt;= <span class="string">&#x27;z&#x27;</span>; c++)</span><br><span class="line">            <span class="keyword">if</span> (curr.children.get(c - <span class="string">&#x27;a&#x27;</span>) != <span class="literal">null</span>)</span><br><span class="line">                dfsWithPrefix(curr.children.get(c - <span class="string">&#x27;a&#x27;</span>), word + c);</span><br><span class="line">    &#125;</span><br><span class="line">    Trie() &#123;</span><br><span class="line">        Root = <span class="keyword">new</span> <span class="title class_">Node</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Inserts the string in trie.</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">insert</span><span class="params">(String s)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Points curr to the root of trie.</span></span><br><span class="line">        curr = Root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : s.toCharArray()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (curr.children.get(c - <span class="string">&#x27;a&#x27;</span>) == <span class="literal">null</span>)</span><br><span class="line">                curr.children.set(c - <span class="string">&#x27;a&#x27;</span>, <span class="keyword">new</span> <span class="title class_">Node</span>());</span><br><span class="line">            curr = curr.children.get(c - <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Mark this node as a completed word.</span></span><br><span class="line">        curr.isWord = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    List&lt;String&gt; <span class="title function_">getWordsStartingWith</span><span class="params">(String prefix)</span> &#123;</span><br><span class="line">        curr = Root;</span><br><span class="line">        resultBuffer = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">        <span class="comment">// Move curr to the end of prefix in its trie representation.</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : prefix.toCharArray()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (curr.children.get(c - <span class="string">&#x27;a&#x27;</span>) == <span class="literal">null</span>)</span><br><span class="line">                <span class="keyword">return</span> resultBuffer;</span><br><span class="line">            curr = curr.children.get(c - <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        dfsWithPrefix(curr, prefix);</span><br><span class="line">        <span class="keyword">return</span> resultBuffer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    List&lt;List&lt;String&gt;&gt; <span class="title function_">suggestedProducts</span><span class="params">(String[] products,</span></span><br><span class="line"><span class="params">                                         String searchWord)</span> &#123;</span><br><span class="line">        <span class="type">Trie</span> <span class="variable">trie</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Trie</span>();</span><br><span class="line">        List&lt;List&lt;String&gt;&gt; result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// Add all words to trie.</span></span><br><span class="line">        <span class="keyword">for</span> (String w : products)</span><br><span class="line">            trie.insert(w);</span><br><span class="line">        <span class="type">String</span> <span class="variable">prefix</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : searchWord.toCharArray()) &#123;</span><br><span class="line">            prefix += c;</span><br><span class="line">            result.add(trie.getWordsStartingWith(prefix));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/03/Trie/" data-id="cl1iqb8310007alor1uxkerx1" data-title="Trie" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Binary-Search-Tree" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/03/18/Binary-Search-Tree/" class="article-date">
@@ -118,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/18/Binary-Search-Tree/" data-id="cl0w2w0u400018joz33zw7vut" data-title="Binary Search Tree" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/18/Binary-Search-Tree/" data-id="cl1iqb82v0001alorh0htbqey" data-title="Binary Search Tree" class="article-share-link">Share</a>
       
       
       
@@ -182,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Sum/" data-id="cl0w2w0ua00068joz2taz5ec2" data-title="Sum" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Sum/" data-id="cl1iqb8310006alor6loi7sed" data-title="Sum" class="article-share-link">Share</a>
       
       
       
@@ -229,7 +268,7 @@
 </li>
 <li>find the first occurrence of a number <ul>
 <li>1,2,2,2 find 2; </li>
-<li>stop at two element</li>
+<li>stop at two elements</li>
 <li>don’t stop at the target, keep moving the left: <code>l = m</code>, not <code>m - 1</code> because can’t get rid of m</li>
 </ul>
 </li>
@@ -238,12 +277,16 @@
 <li>then try to find it in the found range</li>
 </ul>
 </li>
+<li>maximum profit in job scheduling(hard): <a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-profit-in-job-scheduling/">https://leetcode.com/problems/maximum-profit-in-job-scheduling/</a><ul>
+<li>dp + binary search. top down + bottom up.</li>
+</ul>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Binary-Search/" data-id="cl0w2w0u700038joz08680vzh" data-title="Binary Search" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Binary-Search/" data-id="cl1iqb82y0003alor5e4830nh" data-title="Binary Search" class="article-share-link">Share</a>
       
       
       
@@ -313,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Fundamental/" data-id="cl0w2w0u900048joz6sb721ax" data-title="Fundamental" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Fundamental/" data-id="cl1iqb82z0004alorcvg76cs4" data-title="Fundamental" class="article-share-link">Share</a>
       
       
       
@@ -417,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Sorting/" data-id="cl0w2w0ua00058joz0919cpmq" data-title="Sorting" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/06/Sorting/" data-id="cl1iqb8300005aloraobj03ah" data-title="Sorting" class="article-share-link">Share</a>
       
       
       
@@ -456,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/05/start/" data-id="cl0w2w0ub00078jozgkro5u53" data-title="Start My Algorithm Journey" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/05/start/" data-id="cl1iqb8320008alor32oz1vkf" data-title="Start My Algorithm Journey" class="article-share-link">Share</a>
       
       
       
@@ -486,7 +529,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -497,6 +540,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/04/03/Trie/">Trie</a>
+          </li>
         
           <li>
             <a href="/2022/03/18/Binary-Search-Tree/">Binary Search Tree</a>
@@ -512,10 +559,6 @@
         
           <li>
             <a href="/2022/03/06/Fundamental/">Fundamental</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/06/Sorting/">Sorting</a>
           </li>
         
       </ul>
