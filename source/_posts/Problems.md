@@ -552,4 +552,102 @@ termination: cur > j
         nums[j] = temp;
     }
 ```
+##Subsets
+https://leetcode.com/problems/subsets/
+###solutions
+- backtracking (needs review)
+- dps, each level with or without the current element
+```java 
+class Solution {
+    List<List<Integer>> res = new ArrayList<List<Integer>>();
+    public List<List<Integer>> subsets(int[] nums) {
+       dps(nums, 0, new ArrayList<Integer>()); 
+        return res;
+    }
+    private void dps(int[] nums, int idx, List<Integer> list) {
+        if (idx == nums.length) { 
+            res.add(list);
+            return;
+        }
+        
+        List<Integer> copy = new ArrayList<Integer>(list); 
+        dps(nums, idx + 1, copy);
+        
+        List<Integer> copy2 = new ArrayList<Integer>(list); 
+        copy2.add(nums[idx]);
+        dps(nums, idx + 1, copy2);
+    }
+}
+```
+##Word search
+https://leetcode.com/problems/word-search/
+### solutions
+- mark visited grid '#' and then change it back after dps 
+- pruning before dps would save time: 
+   - check if word's length is longer than total number of elements in grid
+   - check if there's any element that's not in the grid
+```java 
+class Solution {
+    public boolean exist(char[][] board, String word) {
+        int m = board.length;
+        int n = board[0].length;
+        if (word.length() > m * n) return false; 
+        HashSet<Character> uniqueChars = new HashSet();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                uniqueChars.add(board[i][j]);
+            }
+        }
+        for (int i = 0; i < word.length(); i++) {
+            if (!uniqueChars.contains(word.charAt(i))) {
+                return false;
+            }
+        } 
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == word.charAt(0)) {
+                    boolean exist = checkWord(board, i, j, word, 0);
+                    if (exist) return true;
+                }
+            }
+        }
+        return false;
+    }
+    private boolean checkWord(char[][] board, int i, int j, String word, int idx) {
+        if (i < 0 || j < 0 || i >= board.length || j >= board[0].length) return false;
+           if (board[i][j] == word.charAt(idx)){
+               if (idx == word.length() - 1) {
+                   return true; 
+               } 
+               board[i][j] = '#';
+               boolean up = checkWord(board, i - 1, j, word, idx + 1);
+               boolean left =  checkWord(board, i, j - 1, word, idx + 1);
+               boolean down =  checkWord(board, i + 1, j, word, idx + 1);
+               boolean right = checkWord(board, i, j + 1, word, idx + 1);
+               board[i][j] = word.charAt(idx);
+               return up || left || down || right; 
+               
+           } 
+        return false;
+    }
+}
+```
 
+## Remove duplicates from sorted array II
+https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+###Solutions
+- copy the last two elements of its kind instead of the first two because it might be overriden. 
+```java 
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int i = 0, j = 0;
+        for (; j < nums.length; j++) {
+           if (j + 2 >=  nums.length || nums[j] != nums[j + 2]) {
+               nums[i] = nums[j];
+               i++;
+           } 
+        }
+        return i;
+    }
+}
+```
