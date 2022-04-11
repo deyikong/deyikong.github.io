@@ -1,250 +1,217 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Binary Search Tree | Deyi Kong&#39;s personal site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Binary Search TreeKeys pre order traverse  in order traverse -&gt; sorted array post order traverse  SearchingRecursive 123456TREE-SEARCH(x, k)    if x &#x3D;&#x3D; NIL or k &#x3D;&#x3D; x.key        return x    if x &amp;lt">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Binary Search Tree">
-<meta property="og:url" content="http://example.com/2022/03/18/Binary-Search-Tree/index.html">
-<meta property="og:site_name" content="Deyi Kong&#39;s personal site">
-<meta property="og:description" content="Binary Search TreeKeys pre order traverse  in order traverse -&gt; sorted array post order traverse  SearchingRecursive 123456TREE-SEARCH(x, k)    if x &#x3D;&#x3D; NIL or k &#x3D;&#x3D; x.key        return x    if x &amp;lt">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-18T06:48:05.000Z">
-<meta property="article:modified_time" content="2022-04-11T09:20:23.220Z">
-<meta property="article:author" content="Deyi Kong">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Deyi Kong's personal site" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<!-- Title -->
+<title>Binary Search Tree - Deyi Kong&#39;s personal site</title>
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<!-- Icon -->
+<link rel="icon" href="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg">
 
-  
-<meta name="generator" content="Hexo 6.0.0"></head>
+<!-- Fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null, this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Deyi Kong&#39;s personal site</a>
-      </h1>
-      
+
+
+<!-- Style -->
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-pure@1.0.1/dist/main.css"> -->
+
+
+
+
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+    <meta name="generator" content="Hexo 6.0.0"></head>
+    <body>
+        <div class="main gt-bg-theme-color-first">
+            <div class="main-content">
+                <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Deyi Kong&#39;s personal site
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
+        <i class="gt-c-content-color-first" style="font-size: 18px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18px" fill="currentColor">
+                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center; ">
+            
+                <div class="nav-item">
+                    <a href="/" class="menu gt-a-link" target="_self">首页</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/archives/" class="menu gt-a-link" target="_self">归档</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/tags/" class="menu gt-a-link" target="_self">标签</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/friends/" class="menu gt-a-link" target="_self">友链</a>
+                </div>
+            
+        </div>
     </div>
-  </div>
-</header>
+</nav>
 
-      <div class="outer">
-        <section id="main"><article id="post-Binary-Search-Tree" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/18/Binary-Search-Tree/" class="article-date">
-  <time class="dt-published" datetime="2022-03-18T06:48:05.000Z" itemprop="datePublished">2022-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Binary Search Tree
-    </h1>
-  
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function() {
+        let element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else { 
+            element.style.display = 'none';
+        }
+    }
+</script>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h2><h3 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h3><ul>
-<li>pre order traverse </li>
+                <div class="post-container">
+    <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
+        <article class="gt-post-content">
+            <h1 class="post-title">Binary Search Tree</h1>
+            <div class="post-info">
+                <time class="post-time gt-c-content-color-first">
+                    · 2022-03-18 ·</time>
+                
+                    
+                
+            </div>
+            <hr>
+            <div class="post-content gt-c-content-color-first">
+                <h2 id="Binary-Search-Tree">Binary Search Tree</h2>
+<h3 id="Keys">Keys</h3>
+<ul>
+<li>pre order traverse</li>
 <li>in order traverse -&gt; sorted array</li>
 <li>post order traverse</li>
 </ul>
-<h3 id="Searching"><a href="#Searching" class="headerlink" title="Searching"></a>Searching</h3><p>Recursive</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TREE-SEARCH(x, k)</span><br><span class="line">    if x == NIL or k == x.key</span><br><span class="line">        return x</span><br><span class="line">    if x &lt; x.key</span><br><span class="line">        return TREE-SEARCH(x.left, k)</span><br><span class="line">    else return TREE-SEARCH(x.right, k)</span><br></pre></td></tr></table></figure>
+<h3 id="Searching">Searching</h3>
+<p>Recursive</p>
+<pre><code class="hljs plaintext">TREE-SEARCH(x, k)
+    if x == NIL or k == x.key
+        return x
+    if x &lt; x.key
+        return TREE-SEARCH(x.left, k)
+    else return TREE-SEARCH(x.right, k)</code></pre>
 <p>Iterative</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ITERATIVE-TREE-SEARCH(x, k)</span><br><span class="line">    while x != NIL or k != x.key</span><br><span class="line">        if k &lt; x.key</span><br><span class="line">            x = x.left</span><br><span class="line">        else x = x.right</span><br><span class="line">    return x </span><br></pre></td></tr></table></figure>
-<h3 id="minimum-and-maximum"><a href="#minimum-and-maximum" class="headerlink" title="minimum and maximum"></a>minimum and maximum</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TREE-MINIMUM(x)</span><br><span class="line">    while x != NIL AND x.left != NIL</span><br><span class="line">        x = x.left</span><br><span class="line">    return x </span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TREE-MAXIMUM(x)</span><br><span class="line">    while x != NIL AND x.right != NIL</span><br><span class="line">        x = x.right</span><br><span class="line">    return x </span><br></pre></td></tr></table></figure>
-<h3 id="successor-and-predecessor"><a href="#successor-and-predecessor" class="headerlink" title="successor and predecessor"></a>successor and predecessor</h3><p> Successor</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TREE-SUCCESSOR(x)</span><br><span class="line">    // if this node has a right subtree, just return the minimum in the right subtree</span><br><span class="line">    if x!= NIL AND x.right != NIL</span><br><span class="line">        return TREE_MINIMUM(x)</span><br><span class="line">    // if this node doesn&#x27;t have a right subtree, go up and find the first parent that&#x27;s the left child of its parent </span><br><span class="line">    y = x.parent</span><br><span class="line">    while y != NIL AND y.right = x</span><br><span class="line">        x = y</span><br><span class="line">        y = y.plarent</span><br><span class="line">    return y</span><br></pre></td></tr></table></figure>
-<p> predecessor</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TREE-PREDECESSOR(x)</span><br><span class="line">    // if this node has a left subtree, just return the maximum in the left subtree</span><br><span class="line">    if x!= NIL AND x.left != NIL</span><br><span class="line">        return TREE_MINIMUM(x)</span><br><span class="line">    // if this node doesn&#x27;t have a left subtree, go up and find the first parent that&#x27;s the right child of its parent </span><br><span class="line">    y = x.parent</span><br><span class="line">    while y != NIL AND y.left = x</span><br><span class="line">        x = y</span><br><span class="line">        y = y.plarent</span><br><span class="line">    return y</span><br></pre></td></tr></table></figure>
-
-<p>####insertion<br>The key point is to find the NIL location, keep the parent, and then append it to the parent<br>loop invariant: p is always the parent of x</p>
+<pre><code class="hljs plaintext">ITERATIVE-TREE-SEARCH(x, k)
+    while x != NIL or k != x.key
+        if k &lt; x.key
+            x = x.left
+        else x = x.right
+    return x</code></pre>
+<h3 id="minimum-and-maximum">minimum and maximum</h3>
+<pre><code class="hljs plaintext">TREE-MINIMUM(x)
+    while x != NIL AND x.left != NIL
+        x = x.left
+    return x</code></pre>
+<pre><code class="hljs plaintext">TREE-MAXIMUM(x)
+    while x != NIL AND x.right != NIL
+        x = x.right
+    return x</code></pre>
+<h3 id="successor-and-predecessor">successor and predecessor</h3>
+<p>Successor</p>
+<pre><code class="hljs plaintext">TREE-SUCCESSOR(x)
+    // if this node has a right subtree, just return the minimum in the right subtree
+    if x!= NIL AND x.right != NIL
+        return TREE_MINIMUM(x)
+    // if this node doesn&#x27;t have a right subtree, go up and find the first parent that&#x27;s the left child of its parent 
+    y = x.parent
+    while y != NIL AND y.right = x
+        x = y
+        y = y.plarent
+    return y</code></pre>
+<p>predecessor</p>
+<pre><code class="hljs plaintext">TREE-PREDECESSOR(x)
+    // if this node has a left subtree, just return the maximum in the left subtree
+    if x!= NIL AND x.left != NIL
+        return TREE_MINIMUM(x)
+    // if this node doesn&#x27;t have a left subtree, go up and find the first parent that&#x27;s the right child of its parent 
+    y = x.parent
+    while y != NIL AND y.left = x
+        x = y
+        y = y.plarent
+    return y</code></pre>
+<p>####insertion<br>
+The key point is to find the NIL location, keep the parent, and then append it to the parent<br>
+loop invariant: p is always the parent of x</p>
 <ul>
-<li>maintain p is the parent of x </li>
-<li>termination: x is NIL<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">TREE-INSERT(T, z)</span><br><span class="line">    p = NIL</span><br><span class="line">    x = T.root</span><br><span class="line">    while x != NIL</span><br><span class="line">        p = x.parent</span><br><span class="line">        if z.key &gt; x.key</span><br><span class="line">            x = x.right</span><br><span class="line">        else x = x.left</span><br><span class="line">    if p = NIL </span><br><span class="line">        T.root = z // Tree is empty</span><br><span class="line">    elseif z.key &gt; p.key</span><br><span class="line">        p.right = z</span><br><span class="line">    else p.left = z</span><br></pre></td></tr></table></figure></li>
+<li>maintain p is the parent of x</li>
+<li>termination: x is NIL</li>
 </ul>
+<pre><code class="hljs plaintext">TREE-INSERT(T, z)
+    p = NIL
+    x = T.root
+    while x != NIL
+        p = x.parent
+        if z.key &gt; x.key
+            x = x.right
+        else x = x.left
+    if p = NIL 
+        T.root = z // Tree is empty
+    elseif z.key &gt; p.key
+        p.right = z
+    else p.left = z</code></pre>
 
-      
+            </div>
+        </article>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/18/Binary-Search-Tree/" data-id="cl1ui877o00019vom6rw81tq8" data-title="Binary Search Tree" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+    <br>
     
-<nav id="article-nav">
-  
-    <a href="/2022/04/03/Trie/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Trie
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/03/06/Sum/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Sum</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
+        <div class="next-prev-post">
+            
+                <div class="prev-post">
+                    <div class="prev gt-c-content-color-first">
+                        上一篇：<a href="/2022/04/03/Trie/" 
+                            class="post-title gt-a-link">Trie</a>
+                    </div>
+                </div>
+            
+            
+                <div class="next-post">
+                    <div class="next gt-c-content-color-first">
+                        下一篇：<a href="/2022/03/06/Sum/" 
+                            class="post-title gt-a-link">Sum</a>
+                    </div>
+                </div>
+            
+        </div>
+    
     
 
-  
     
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+</div>
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="footer-main">
+        <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->
+        <!-- 文件位置：layout/_includes/footer.ejs -->
+        <span style="text-align: right; float: right;">Theme <a 
+            href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by <a 
+            href="https://hexo.io" target="_blank">Hexo</a></span>
+        <span style="text-align: left;">Welcome to my blog!</span>
     </div>
-  </div>
+</div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/04/05/Problems/">Problems</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/03/Trie/">Trie</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/18/Binary-Search-Tree/">Binary Search Tree</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/06/Sum/">Sum</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/06/Binary-Search/">Binary Search</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 Deyi Kong<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
+            </div>
+        </div>
+    </body>
 </html>

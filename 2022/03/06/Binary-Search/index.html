@@ -1,256 +1,177 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Binary Search | Deyi Kong&#39;s personal site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="ConceptsKey get rid of a side that’s not what we are looking for whether you can git rid of the border depending on if the border might be the final answer use the smallest sample size(size &#x3D; 1)">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Binary Search">
-<meta property="og:url" content="http://example.com/2022/03/06/Binary-Search/index.html">
-<meta property="og:site_name" content="Deyi Kong&#39;s personal site">
-<meta property="og:description" content="ConceptsKey get rid of a side that’s not what we are looking for whether you can git rid of the border depending on if the border might be the final answer use the smallest sample size(size &#x3D; 1)">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-06T04:19:39.000Z">
-<meta property="article:modified_time" content="2022-04-11T09:20:23.220Z">
-<meta property="article:author" content="Deyi Kong">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Deyi Kong's personal site" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<!-- Title -->
+<title>Binary Search - Deyi Kong&#39;s personal site</title>
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<!-- Icon -->
+<link rel="icon" href="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg">
 
-  
-<meta name="generator" content="Hexo 6.0.0"></head>
+<!-- Fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null, this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Deyi Kong&#39;s personal site</a>
-      </h1>
-      
+
+
+<!-- Style -->
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-pure@1.0.1/dist/main.css"> -->
+
+
+
+
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+    <meta name="generator" content="Hexo 6.0.0"></head>
+    <body>
+        <div class="main gt-bg-theme-color-first">
+            <div class="main-content">
+                <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Deyi Kong&#39;s personal site
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
+        <i class="gt-c-content-color-first" style="font-size: 18px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18px" fill="currentColor">
+                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center; ">
+            
+                <div class="nav-item">
+                    <a href="/" class="menu gt-a-link" target="_self">首页</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/archives/" class="menu gt-a-link" target="_self">归档</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/tags/" class="menu gt-a-link" target="_self">标签</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/friends/" class="menu gt-a-link" target="_self">友链</a>
+                </div>
+            
+        </div>
     </div>
-  </div>
-</header>
+</nav>
 
-      <div class="outer">
-        <section id="main"><article id="post-Binary-Search" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/06/Binary-Search/" class="article-date">
-  <time class="dt-published" datetime="2022-03-06T04:19:39.000Z" itemprop="datePublished">2022-03-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Binary Search
-    </h1>
-  
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function() {
+        let element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else { 
+            element.style.display = 'none';
+        }
+    }
+</script>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h2><h2 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h2><ul>
+                <div class="post-container">
+    <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
+        <article class="gt-post-content">
+            <h1 class="post-title">Binary Search</h1>
+            <div class="post-info">
+                <time class="post-time gt-c-content-color-first">
+                    · 2022-03-05 ·</time>
+                
+                    
+                
+            </div>
+            <hr>
+            <div class="post-content gt-c-content-color-first">
+                <h2 id="Concepts">Concepts</h2>
+<h2 id="Key">Key</h2>
+<ul>
 <li>get rid of a side that’s not what we are looking for</li>
 <li>whether you can git rid of the border depending on if the border might be the final answer</li>
-<li>use the smallest sample size(size &#x3D; 1) to test if the condition allows entering the while loop, and test if the condition allows exiting the loop</li>
+<li>use the smallest sample size(size = 1) to test if the condition allows entering the while loop, and test if the condition allows exiting the loop</li>
 </ul>
-<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><ul>
+<h2 id="Questions">Questions</h2>
+<ul>
 <li>closet to a target number(stop at two elements)</li>
-<li>kth closet to a target number<ul>
+<li>kth closet to a target number
+<ul>
 <li>find the closest, then traverse left or right</li>
 </ul>
 </li>
-<li>find the first occurrence of a number <ul>
-<li>1,2,2,2 find 2; </li>
+<li>find the first occurrence of a number
+<ul>
+<li>1,2,2,2 find 2;</li>
 <li>stop at two elements</li>
 <li>don’t stop at the target, keep moving the left: <code>l = m</code>, not <code>m - 1</code> because can’t get rid of m</li>
 </ul>
 </li>
-<li>sorted array of unknown size<ul>
+<li>sorted array of unknown size
+<ul>
 <li>double the range to find the end index first</li>
 <li>then try to find it in the found range</li>
 </ul>
 </li>
-<li>maximum profit in job scheduling(hard): <a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-profit-in-job-scheduling/">https://leetcode.com/problems/maximum-profit-in-job-scheduling/</a><ul>
+<li>maximum profit in job scheduling(hard): <a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-profit-in-job-scheduling/">https://leetcode.com/problems/maximum-profit-in-job-scheduling/</a>
+<ul>
 <li>dp + binary search. top down + bottom up.</li>
 </ul>
 </li>
 </ul>
 
-      
+            </div>
+        </article>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/Binary-Search/" data-id="cl1ui877r00039vomhpzogush" data-title="Binary Search" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+    <br>
     
-<nav id="article-nav">
-  
-    <a href="/2022/03/06/Sum/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Sum
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/03/06/Fundamental/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Fundamental</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
+        <div class="next-prev-post">
+            
+                <div class="prev-post">
+                    <div class="prev gt-c-content-color-first">
+                        上一篇：<a href="/2022/03/06/Sum/" 
+                            class="post-title gt-a-link">Sum</a>
+                    </div>
+                </div>
+            
+            
+                <div class="next-post">
+                    <div class="next gt-c-content-color-first">
+                        下一篇：<a href="/2022/03/06/Fundamental/" 
+                            class="post-title gt-a-link">Fundamental</a>
+                    </div>
+                </div>
+            
+        </div>
+    
     
 
-  
     
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+</div>
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="footer-main">
+        <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->
+        <!-- 文件位置：layout/_includes/footer.ejs -->
+        <span style="text-align: right; float: right;">Theme <a 
+            href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by <a 
+            href="https://hexo.io" target="_blank">Hexo</a></span>
+        <span style="text-align: left;">Welcome to my blog!</span>
     </div>
-  </div>
+</div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/04/05/Problems/">Problems</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/03/Trie/">Trie</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/18/Binary-Search-Tree/">Binary Search Tree</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/06/Sum/">Sum</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/06/Binary-Search/">Binary Search</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 Deyi Kong<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
+            </div>
+        </div>
+    </body>
 </html>
