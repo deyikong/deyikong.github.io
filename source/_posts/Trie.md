@@ -5,7 +5,7 @@ tags:
 ---
 
 ##Search Suggestion System: https://leetcode.com/problems/search-suggestions-system/
-```java
+``` java   https://leetcode.com/problems/search-suggestions-system/ 
 // Custom class Trie with function to get 3 words starting with given prefix
 class Trie {
 

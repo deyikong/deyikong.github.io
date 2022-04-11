@@ -1,0 +1,34 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+footer:
+  Welcome to my blog!
+highlight:
+  enable: true
+  engine: highlight
+  auto_detect: true
+  line_number: false  # This value must be `false`
+  wrap: false         # This value must be `false`
+  tab_replace: '    ' # 4 spaces
+  hljs: true          # This value must be `true`
+prismjs:
+  enable: false
+
+# Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+  plugins:
+    - '@neilsustc/markdown-it-katex'
+  anchors:
+    level: 2
+    collisionSuffix: 't'
+    permalink: false
+    permalinkClass: header-anchor
+    permalinkSymbol: ''

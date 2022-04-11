@@ -7,12 +7,12 @@ tags:
 # 04/05/2022
 ## Longest Common Prefix 
 https://leetcode.com/problems/longest-common-prefix/
-###Solutions:
+### Solutions:
 - horizontal scanning(from left to right)
 - vertical scanning(compare the ith char on all the elements each time)
 - divide and conquer 
 - Binary search
-###Follow up
+### Follow up
 LCP called multiple times frequently 
 - use a trie
     - node path must only have one child element
@@ -47,7 +47,7 @@ https://leetcode.com/problems/swap-nodes-in-pairs/
 ## remove element 
 https://leetcode.com/problems/remove-element/
 
-###Solutions
+### Solutions
 - two pointer, slow fast pointer. copy over all the not equal elements
 - two pointer, opposite direction, reduce right pointer by one when equal. 
 
@@ -147,9 +147,9 @@ class Solution {
 }
 ```
 
-##Jump game II
+## Jump game II
 https://leetcode.com/problems/jump-game-ii/
-###Solutions
+### Solutions
 - dp N^2
 - BFS, N 
 - greedy
@@ -158,7 +158,7 @@ https://leetcode.com/problems/jump-game-ii/
 
 ## Permutations
 https://leetcode.com/problems/permutations/
-###Solutions
+### Solutions
 - key point: fill each spot with available elements
 - dps
 - swap swap
@@ -252,7 +252,7 @@ https://leetcode.com/problems/permutations-ii/
 ## Power(x, n)
 https://leetcode.com/problems/powx-n/
 
-###Solutions
+### Solutions
 - cut in half each time, dp to remember half. 
 - check negative and odd situation
 
@@ -282,7 +282,7 @@ https://leetcode.com/problems/powx-n/
 
 ## Spiral Matrix
 https://leetcode.com/problems/spiral-matrix/
-###Solutions
+### Solutions
 - separate directions
 - check boundary 
 
@@ -394,15 +394,15 @@ https://leetcode.com/problems/spiral-matrix-ii/
 ```
 
 
-##unique paths
+## unique paths
 https://leetcode.com/problems/unique-paths/
-###Solutions
+### Solutions
 - dp
 - basic math: choose m - 1 or n - 1 from m - n - 2
 
-##unique paths II (with obstacles)
+## unique paths II (with obstacles)
 https://leetcode.com/problems/unique-paths-ii/
-###solutions
+### solutions
 - dp 
 ```java
 public int uniquePathsWithObstacles(int[][] obstacleGrid) {
@@ -428,9 +428,9 @@ public int uniquePathsWithObstacles(int[][] obstacleGrid) {
 }
 ```
 
-##Minimum path sum
+## Minimum path sum
 https://leetcode.com/problems/minimum-path-sum/
-###Solutions
+### Solutions
 - dp 2D
 - dp 1D
 ```java 
@@ -474,7 +474,7 @@ public int minPathSum(int[][] grid) {
 }
 ```
 
-##Set Matrix Zeros
+## Set Matrix Zeros
 https://leetcode.com/problems/set-matrix-zeroes/
 ### solutions
 - use two sets
@@ -482,7 +482,7 @@ https://leetcode.com/problems/set-matrix-zeroes/
 
 ## search a 2d matrix
 https://leetcode.com/problems/search-a-2d-matrix/
-###Solutions
+### Solutions
 - get row and col like: mid / n; mid % n;
 ```java 
 public boolean searchMatrix(int[][] matrix, int target) {
@@ -512,7 +512,7 @@ public boolean searchMatrix(int[][] matrix, int target) {
 
 ## Sort color
 https://leetcode.com/problems/sort-colors/
-###Solutions
+### Solutions
 - quicksort O(NlogN) (more general)
 - O(N), one pass solution 
 loop invariants:
@@ -552,9 +552,9 @@ termination: cur > j
         nums[j] = temp;
     }
 ```
-##Subsets
+## Subsets
 https://leetcode.com/problems/subsets/
-###solutions
+### solutions
 - backtracking (needs review)
 - dps, each level with or without the current element
 ```java 
@@ -579,7 +579,7 @@ class Solution {
     }
 }
 ```
-##Word search
+## Word search
 https://leetcode.com/problems/word-search/
 ### solutions
 - mark visited grid '#' and then change it back after dps 
@@ -635,7 +635,7 @@ class Solution {
 
 ## Remove duplicates from sorted array II
 https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
-###Solutions
+### Solutions
 - copy the last two elements of its kind instead of the first two because it might be overriden. 
 ```java 
 class Solution {
@@ -654,9 +654,9 @@ class Solution {
 
 #04/08/2022
 
-##search in rotated sorted array
+## search in rotated sorted array
 https://leetcode.com/problems/search-in-rotated-sorted-array/
-###solutions
+### solutions
 - S1. find the pivot first, then binary search one of them
 - S2. one binary search, add more conditions to move left or right
 
@@ -738,9 +738,9 @@ class Solution {
 }
 ```
 
-##Search in Rotated Sorted Array II
+## Search in Rotated Sorted Array II
 https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
-###Solutions
+### Solutions
 - same as the first one except when trying to locate pivot, check which side the pivot it located in by checking to the right or left  
 ```java 
 class Solution {
@@ -799,15 +799,14 @@ class Solution {
 
 ## Remove Duplicates from Sorted List
 https://leetcode.com/problems/remove-duplicates-from-sorted-list/
-###Solutions
+### Solutions
 - two pointer, prev and cur
 - loop invariants: 
    - everything left to prev including prev are all unique
    - move cur to the right without connecting if it's the same as prev
-    
 ## Remove Duplicates from Sorted List II
 https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/solution/
-###Solutions
+### Solutions
 - Sentinel head solution: dummy head, because we are not sure what's the head, so we check which is head first, then append it to the dummy head. 
 - loop invariants: 
     - everything left to last are correct answer
@@ -879,7 +878,7 @@ https://leetcode.com/problems/reverse-linked-list-ii/
 
 trick part, remember the element before the reversal, and also the element where the reversal stops. 
 
-###Solutions
+### Solutions
 - use dummy head, because we don't know the new head ahead of time
 - record "newHead" and "newTail" and "before" 
 ```java 
@@ -974,7 +973,7 @@ class Solution {
 
 ## Flip String to Monotone increasing
 https://leetcode.com/problems/flip-string-to-monotone-increasing/
-##Solutions
+## Solutions
 - s1. check how many 0s before element and how many zeros after element i using prefix sum
 - s2. very tricky thought process, dp thought process too
     - if current element is 1
@@ -1005,7 +1004,7 @@ class Solution {
 }
 ```
 
-##Count Unique Characters of All Substrings of a Given String
+## Count Unique Characters of All Substrings of a Given String
 https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/
 
 ### Solutions
@@ -1117,7 +1116,7 @@ class LRUCache {
 ## Count Binary Substrings
 https://leetcode.com/problems/count-binary-substrings/
 
-###Solutions
+### Solutions
 - count ones and zeros, take min of the two consecutive groups
 
 ```java 
@@ -1144,7 +1143,7 @@ class Solution {
 
 ## The kth Factor of n
 https://leetcode.com/problems/the-kth-factor-of-n/
-###Solutions
+### Solutions
 - O(sqrt(N))
 - S1. remember both halves. 
 - S2. check if the k is in the first half, only save divisors
@@ -1205,7 +1204,7 @@ class Solution {
 
 ## valid palindrome II
 https://leetcode.com/problems/valid-palindrome-ii/
-###Solutions
+### Solutions
 - try both substrings generated by deleting each of the mismatched pair
 ```java 
 class Solution {
@@ -1237,7 +1236,7 @@ class Solution {
 ## Maximum Units on a Truck
 https://leetcode.com/problems/maximum-units-on-a-truck/
 
-###Solutions
+### Solutions
 - sort the array and pick from the bigger box first.  
 ```java 
 class Solution {
