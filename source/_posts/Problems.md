@@ -1360,3 +1360,149 @@ class Solution {
     }
 }
 ```
+
+## Sum of Subarray Minimums
+https://leetcode.com/problems/sum-of-subarray-minimums/
+### Solutions
+- count the contributions of each element being the smallest element
+```java 
+class Solution {
+    public int sumSubarrayMins(int[] arr) {
+        int l = arr.length;
+        if (l == 0) return 0;
+        Stack<Integer> s = new Stack();
+        long res = 0;
+        s.add(0); 
+        int mod = (int)(Math.pow(10, 9) + 7);
+        for (int i = 1; i <= l; i++) {
+            while (!s.isEmpty() && arr[s.peek()] > (i == l? 0 : arr[i])) {
+                int j = s.pop(); 
+                int k = s.isEmpty() ? -1 :s.peek();
+                res += (long)arr[j] * (j - k) * (i - j);
+                res = res % mod;
+            } 
+            s.push(i);
+        }
+        return (int)res;
+    }
+}
+```
+
+## Minimum Swaps to Group All 1's Together
+https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together/
+
+### Solutions
+- sliding window O(n) time, O(1) space
+- prefix sum: O(n) time, O(n) space
+
+``` java
+class Solution {
+    public int minSwaps(int[] data) {
+        int ones = Arrays.stream(data).sum();
+        int cnt_one = 0, max_one = 0;
+        int left = 0, right = 0;
+
+        while (right < data.length) {
+            // updating the number of 1's by adding the new element
+            cnt_one += data[right++];
+            // maintain the length of the window to ones
+            if (right - left > ones) {
+                // updating the number of 1's by removing the oldest element
+                cnt_one -= data[left++];
+            }
+            // record the maximum number of 1's in the window
+            max_one = Math.max(max_one, cnt_one);
+        }
+        return ones - max_one;
+    }
+}
+```
+``` java My attempt 
+class Solution {
+    public int minSwaps(int[] data) {
+        int l = data.length;
+        int[] sum = new int[l]; 
+        sum[0] = data[0];
+        for (int i = 1; i < l; i++) {
+            sum[i] = data[i] + sum[i - 1];
+        }
+        if (sum[l - 1] < 2 || sum[l - 1] == l) {
+            return 0;
+        }
+        
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i <= l - sum[l - 1]; i++) {
+            int lastIndex = i + sum[l-1] - 1;
+            int localMin = sum[l - 1] - sum[lastIndex] + sum[i];
+            if (data[i] == 1) {
+                localMin--;
+            } 
+            min = Math.min(localMin, min);
+        }
+        return min; 
+    }
+}
+```
+
+##  Maximum Length of Subarray With Positive Product
+https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/
+### Solutions
+- record the first negative number's index(my solution)
+- dry run
+
+``` java My solution 
+class Solution {
+    public int getMaxLen(int[] nums) {
+        int negatives = 0;
+        int max = 0;
+        int count = 0;
+        int firstNegative = -1;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                negatives = 0;
+                count = 0;
+                firstNegative = -1;
+                continue;
+            }
+            if (nums[i] < 0) {
+                if (firstNegative == -1) {
+                    firstNegative = i;
+                }
+                negatives++;
+           } 
+           if (negatives % 2 == 1 && firstNegative != -1) { // but there's odd number of negatives, count between first negative and current
+               max = Math.max(max, i - firstNegative); 
+           } else if (negatives % 2 == 0) {
+               max = Math.max(max, count + 1); 
+           }
+            count++; 
+        }
+        return max;
+    }
+}
+```
+``` java dry run https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/discuss/820072/EASY-soultion-with-DRY-RUN-JAVA
+class Solution {
+    public int getMaxLen(int[] nums) {
+        int positive = 0, negative = 0;    // length of positive and negative results
+        int ans = 0;
+        for(int x : nums) {
+            if(x == 0)  {
+                positive = 0;
+                negative = 0;
+            }
+            else if(x > 0) {
+                positive++;
+                negative = negative == 0 ? 0  : negative+1;
+            }
+            else {
+                int temp = positive;
+                positive = negative == 0 ? 0  : negative+1;
+                negative = temp+1;
+            }
+            ans = Math.max(ans, positive);
+        }
+        return ans;
+    }
+}
+```
