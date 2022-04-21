@@ -1506,3 +1506,235 @@ class Solution {
     }
 }
 ```
+
+## Nested List Weight Sum
+https://leetcode.com/problems/nested-list-weight-sum/
+### solutions
+- DFS
+- BFS
+```java Coding tricks 
+  Queue<NestedInteger> queue = new LinkedList<NestedInteger>(nestedList);
+  queue.addAll(ni.getList());
+```
+
+## Lowest Common Ancestor with parent pointer 
+https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/
+
+### Solutions
+- S1. Set
+- S2. traverse both paths
+```java Set Solution
+class Solution {
+    public Node lowestCommonAncestor(Node p, Node q) {
+        HashSet<Integer> set = new HashSet();
+        while (p != null) {
+            set.add(p.val);
+            p = p.parent;
+        }
+        while (q != null) {
+            if (set.contains(q.val)) return q;
+            q = q.parent;
+        }
+        return q;
+    }
+}
+```
+```java travers both paths solution 
+class Solution {
+    public Node lowestCommonAncestor(Node p, Node q) {
+        Node n1 = p;
+        Node n2 = q;
+        while (n1 != n2) {
+            n1 = n1.parent == null ? q : n1.parent;
+            n2 = n2.parent == null ? p : n2.parent;
+        }
+        return n1;
+    }
+}
+```
+
+## Smallest Common Region
+https://leetcode.com/problems/smallest-common-region/
+### Solutions
+- use a tree structure to record the parent of each node(my method)
+- use a hashMap to record the parent 
+```java 
+class Node {
+    //List<Node> children = new ArrayList<Node>();
+    String val = "";
+    public Node(String val) {
+        this.val = val;
+    }
+    Node parent = null;
+}
+class Solution {
+    public String findSmallestRegion(List<List<String>> regions, String region1, String region2) {
+        // thoughts: create a tree struction and a set of all tree nodes, then find the lowest common ancestor. 
+        
+        HashMap<String, Node> map = new HashMap();
+        // create a tree auto of the regions. 
+        for (List<String> region: regions) {
+            Node parentNode = map.getOrDefault(region.get(0), new Node(region.get(0))); 
+            map.put(region.get(0), parentNode);
+            for (int i = 1; i < region.size(); i++) {
+                Node child = map.getOrDefault(region.get(i), new Node(region.get(i)));
+                map.put(region.get(i), child);
+                //parentNode.children.add(child);
+                child.parent = parentNode;
+            }
+        }
+        
+        // find the lowest common ancestor 
+        Node n1 = map.get(region1);
+        Node n2 = map.get(region2);
+        HashSet<String> paths = new HashSet();
+        while (n1 != null) {
+            paths.add(n1.val);
+            n1 = n1.parent;
+        }
+        while (n2 != null) {
+            if (paths.contains(n2.val)) return n2.val; 
+            n2 = n2.parent;
+        }
+        return "";
+    }
+}
+```
+```java 
+class Solution {
+    public String findSmallestRegion(List<List<String>> regions, String region1, String region2) {
+        HashMap<String, String> map = new HashMap();
+        for (List<String> region: regions) {
+            for (int i = 1; i < region.size(); i++) {
+                map.put(region.get(i), region.get(0));
+            }
+        }
+        
+        // find the lowest common ancestor 
+        HashSet<String> paths = new HashSet();
+        while (region1 != null) {
+            paths.add(region1);
+            region1 = map.get(region1);
+        }
+        while (region2 != null) {
+            if (paths.contains(region2)) return region2; 
+            region2 = map.get(region2);
+        }
+        return "";
+    }
+}
+```
+``` java without set
+Map<String, String> parent = new HashMap<>();
+for(List<String> rs: regions) {
+    for(int j = 1; j < rs.size(); j++) {
+        parent.put(rs.get(j), rs.get(0));
+    }
+}
+String p1 = region1, p2 = region2;
+while(!p1.equals(p2)) {
+    p1 = parent.getOrDefault(p1, region2);
+    p2 = parent.getOrDefault(p2, region1);
+}
+return p1;
+```
+
+
+## Cinema seat allocation
+https://leetcode.com/problems/cinema-seat-allocation/submissions/
+
+### Solutions
+- only iterate reserved rows
+- S1. use a boolean array for each row
+- S2. use a set for each row
+- S2. use an integer for the row, use bitwise operations
+
+```javascript 1.5
+class Solution {
+    public int maxNumberOfFamilies(int n, int[][] reservedSeats) {
+        HashMap<Integer, boolean[]> reservedRows = new HashMap();
+        for (int[] seat: reservedSeats) {
+            boolean[] cols = reservedRows.getOrDefault(seat[0] - 1, new boolean[10]);
+            cols[seat[1] - 1] = true;
+            reservedRows.put(seat[0] - 1, cols);
+        }
+        //System.out.println(reservedRows.size());
+        int result = 2 * (n - reservedRows.size());
+        
+        for (boolean[] cols : reservedRows.values()) {
+            if (!cols[1] && !cols[2] && !cols[3] && !cols[4]) {
+                cols[3] = true;
+                cols[4] = true;
+                result++;
+            }
+            if (!cols[3] && !cols[4] && !cols[5] && !cols[6]) {
+                cols[5] = true;
+                cols[6] = true;
+                result++;
+            }
+            if (!cols[5] && !cols[6] && !cols[7] && !cols[8]) {
+                result++;
+            }
+        }
+        return result; 
+    }
+}
+```
+```java S2
+class Solution {
+    public int maxNumberOfFamilies(int n, int[][] reservedSeats) {
+        HashMap<Integer, HashSet<Integer>> reservedRows = new HashMap();
+        for (int[] seat: reservedSeats) {
+            HashSet<Integer> cols = reservedRows.getOrDefault(seat[0] - 1, new HashSet<Integer>());
+            cols.add(seat[1] - 1);
+            reservedRows.put(seat[0] - 1, cols);
+        }
+        //System.out.println(reservedRows.size());
+        int result = 2 * (n - reservedRows.size());
+        
+        for (HashSet<Integer> cols : reservedRows.values()) {
+            if (!cols.contains(1) && !cols.contains(2) && !cols.contains(3) && !cols.contains(4)) {
+                cols.add(3);
+                cols.add(4);
+                result++;
+            }
+            if (!cols.contains(3) && !cols.contains(4) && !cols.contains(5) && !cols.contains(6)) {
+                cols.add(5);
+                cols.add(6);
+                result++;
+            }
+            if (!cols.contains(5) && !cols.contains(6) && !cols.contains(7) && !cols.contains(8)) {
+                result++;
+            }
+        }
+        return result; 
+    }
+}
+```
+```java S3
+class Solution {
+    public int maxNumberOfFamilies(int n, int[][] reservedSeats) {
+        HashMap<Integer, Integer> reservedRows = new HashMap();
+        for (int[] seat: reservedSeats) {
+            reservedRows.put(seat[0], reservedRows.getOrDefault(seat[0], 0) | (1 << seat[1]));
+        }
+        int result = 2 * (n - reservedRows.size());
+        
+        for (int cols : reservedRows.values()) {
+            boolean reserved = false;
+            if ((cols & 60) == 0) {
+                reserved = true;
+                result++;
+            }
+            if ((cols & 960) == 0) {
+                reserved = true;
+                result++;
+            }
+            if (!reserved && (cols & 240) == 0) {
+                result++;
+            }
+        }
+        return result; 
+    }
+}
+```
