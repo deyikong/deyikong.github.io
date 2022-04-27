@@ -2,6 +2,12 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
+title: Deyi Kong's personal sites
+author: Deyi Kong
+favicon: https://media-exp1.licdn.com/dms/image/C5603AQGkjEU_C2rMHA/profile-displayphoto-shrink_100_100/0/1650346363448?e=1656547200&v=beta&t=7xAt1-bI5Wb289E7jdvufkmFvFFEW2zpXAykINlXuQw
+avatar: https://media-exp1.licdn.com/dms/image/C5603AQGkjEU_C2rMHA/profile-displayphoto-shrink_100_100/0/1650346363448?e=1656547200&v=beta&t=7xAt1-bI5Wb289E7jdvufkmFvFFEW2zpXAykINlXuQw
+post:
+  feature: true
 footer:
   Welcome to my blog!
 highlight:
@@ -12,6 +18,15 @@ highlight:
   wrap: false         # This value must be `false`
   tab_replace: '    ' # 4 spaces
   hljs: true          # This value must be `true`
+menus:
+  - name: Home
+    link: /
+  - name: Archives
+    link: /archives/
+  - name: Tags
+    link: /tags/
+  - name: Links
+    link: /friends/
 prismjs:
   enable: false
 
@@ -32,3 +47,8 @@ markdown:
     permalink: false
     permalinkClass: header-anchor
     permalinkSymbol: ''
+friends:
+  - name: 99huaren.com
+    link: https://www.99huaren.com/
+    logo: https://www.99huaren.com/img/icons/apple-touch-icon-152x152.png
+    description: Chinese social media platform
