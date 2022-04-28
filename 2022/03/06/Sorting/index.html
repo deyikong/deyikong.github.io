@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Sorting | Hexo</title>
+  <meta name="description" content="Insertion Sort Keys  playing card sorted part + unsorted part insert in sorted array  Code array import java.util.*; class GFG &amp;#123; &#x2F;&#x2F; Function to sort an array using insertion sort static void inse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sorting">
+<meta property="og:url" content="http://example.com/2022/03/06/Sorting/index.html">
+<meta property="og:site_name" content="Deyi Kong">
+<meta property="og:description" content="Insertion Sort Keys  playing card sorted part + unsorted part insert in sorted array  Code array import java.util.*; class GFG &amp;#123; &#x2F;&#x2F; Function to sort an array using insertion sort static void inse">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/03/06/Sorting/Merge-Sort-Tutorial.png">
+<meta property="article:published_time" content="2022-03-06T00:53:41.000Z">
+<meta property="article:modified_time" content="2022-04-28T00:12:00.695Z">
+<meta property="article:author" content="Deyi Kong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/03/06/Sorting/Merge-Sort-Tutorial.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2022/03/06/Sorting/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Deyi Kong" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://media-exp1.licdn.com/dms/image/C5603AQGkjEU_C2rMHA/profile-displayphoto-shrink_100_100/0/1650346363448?e=1656547200&v=beta&t=7xAt1-bI5Wb289E7jdvufkmFvFFEW2zpXAykINlXuQw" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/deyikong" target="_blank">
+          <img class="img-circle img-rotate" src="https://www.gravatar.com/avatar/5a8ce3f96167467fcfaebda99f45b252?s=128" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Deyi Kong</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Senior Software Engineer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Houston, Texas</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/deyikong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://twitter.com/CuriousScorpio" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.facebook.com/deyi.kong.awesome" target="_blank" title="Facebook" data-toggle=tooltip data-placement=top><i class="icon icon-facebook"></i></a></li>
+        
+        <li><a href="https://www.linkedin.com/in/deyikong/" target="_blank" title="Linkedin" data-toggle=tooltip data-placement=top><i class="icon icon-linkedin"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Please share your opinions and thoughts</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled ">
+        
+          <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/04/21/Kth-Biggest/" class="thumb">
+    
+    
+        <span class="thumb-image thumb-none"></span>
+    
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/21/Kth-Biggest/" class="title">Kth Biggest</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-21T02:13:31.000Z" itemprop="datePublished">2022-04-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/04/12/Bucket-Sort-And-Meeting-Rooms/" class="thumb">
+    
+    
+        <span class="thumb-image thumb-none"></span>
+    
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/12/Bucket-Sort-And-Meeting-Rooms/" class="title">Bucket Sort</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-12T05:05:41.000Z" itemprop="datePublished">2022-04-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/04/05/Problems/" class="thumb">
+    
+    
+        <span class="thumb-image thumb-none"></span>
+    
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/05/Problems/" class="title">Problems</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-05T16:32:04.000Z" itemprop="datePublished">2022-04-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/04/03/Trie/" class="thumb">
+    
+    
+        <span class="thumb-image thumb-none"></span>
+    
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/03/Trie/" class="title">Trie</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-03T03:31:32.000Z" itemprop="datePublished">2022-04-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/03/18/Binary-Search-Tree/" class="thumb">
+    
+    
+        <span class="thumb-image thumb-none"></span>
+    
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/18/Binary-Search-Tree/" class="title">Binary Search Tree</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-18T06:48:05.000Z" itemprop="datePublished">2022-03-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Sorting" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sorting
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/03/06/Sorting/" class="article-date">
+	  <time datetime="2022-03-06T00:53:41.000Z" itemprop="datePublished">2022-03-05</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/06/Sorting/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1.9k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 12(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1>Insertion Sort</h1>
+<h2 id="Keys-2">Keys</h2>
+<ul>
+<li>playing card</li>
+<li>sorted part + unsorted part</li>
+<li>insert in sorted array</li>
+</ul>
+<h2 id="Code">Code</h2>
+<h3 id="array">array</h3>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">GFG</span>
+&#123;
+<span class="hljs-comment">// Function to sort an array using insertion sort</span>
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">insertionSort</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[], <span class="hljs-type">int</span> n)</span>
+&#123;
+	<span class="hljs-type">int</span> i, key, j;
+	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt; n; i++)
+	&#123;
+		key = arr[i];
+		j = i - <span class="hljs-number">1</span>;
+
+		<span class="hljs-comment">// Move elements of arr[0..i-1],</span>
+		<span class="hljs-comment">// that are greater than key to</span>
+		<span class="hljs-comment">// one position ahead of their</span>
+		<span class="hljs-comment">// current position</span>
+		<span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; key)
+		&#123;
+			arr[j + <span class="hljs-number">1</span>] = arr[j];
+			j = j - <span class="hljs-number">1</span>;
+		&#125;
+		arr[j + <span class="hljs-number">1</span>] = key;
+	&#125;
+&#125;
+
+<span class="hljs-comment">// Function to print an array of size N</span>
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printArray</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[], <span class="hljs-type">int</span> n)</span>
+&#123;
+	<span class="hljs-type">int</span> i;
+
+	<span class="hljs-comment">// Print the array</span>
+	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;
+		System.out.print(arr[i] + <span class="hljs-string">&quot; &quot;</span>);
+	&#125;
+	System.out.println();
+&#125;
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>
+&#123;
+	<span class="hljs-type">int</span> arr[] = &#123; <span class="hljs-number">12</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span> &#125;;
+	<span class="hljs-type">int</span> <span class="hljs-variable">N</span> <span class="hljs-operator">=</span> arr.length;
+
+	<span class="hljs-comment">// Function Call</span>
+	insertionSort(arr, N);
+	printArray(arr, N);
+&#125;
+&#125;
+</code></pre>
+<h3 id="Singly-linkedlist">Singly linkedlist</h3>
+<ul>
+<li>My solution (not optimal, hard to remember)</li>
+</ul>
+<pre><code class="hljs java"><span class="hljs-comment">/**</span>
+<span class="hljs-comment"> * Definition for singly-linked list.</span>
+<span class="hljs-comment"> * public class ListNode &#123;</span>
+<span class="hljs-comment"> *     int val;</span>
+<span class="hljs-comment"> *     ListNode next;</span>
+<span class="hljs-comment"> *     ListNode() &#123;&#125;</span>
+<span class="hljs-comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span>
+<span class="hljs-comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span>
+<span class="hljs-comment"> * &#125;</span>
+<span class="hljs-comment"> */</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;
+    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">insertionSortList</span><span class="hljs-params">(ListNode head)</span> &#123;
+        <span class="hljs-comment">//base case:</span>
+        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> head;
+       <span class="hljs-comment">// loop invariants: </span>
+        <span class="hljs-comment">// for each i in [0, n], list before head[i] is sorted, after is not sorted. </span>
+        <span class="hljs-comment">// initialization: i = 1, becasue head[0] is already sorted by itself</span>
+        <span class="hljs-comment">// maintenance: as i++, we need to insert head[i] into it&#x27;s right place.</span>
+        <span class="hljs-comment">// temination condition: when it passes all the elements</span>
+        <span class="hljs-type">ListNode</span> <span class="hljs-variable">local</span> <span class="hljs-operator">=</span> head.next;
+        <span class="hljs-type">int</span> <span class="hljs-variable">localTraverseCount</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        <span class="hljs-type">ListNode</span> <span class="hljs-variable">localPrev</span> <span class="hljs-operator">=</span> head;
+        <span class="hljs-type">ListNode</span> <span class="hljs-variable">headCopy</span> <span class="hljs-operator">=</span> head;
+        
+        <span class="hljs-keyword">while</span>(local != <span class="hljs-literal">null</span>) &#123;
+             <span class="hljs-comment">// break current node</span>
+              localPrev.next = local.next;
+            <span class="hljs-type">ListNode</span> <span class="hljs-variable">next</span> <span class="hljs-operator">=</span> local.next;
+            
+           <span class="hljs-comment">// if it&#x27;s the smallest </span>
+          <span class="hljs-keyword">if</span> (local.val &lt; headCopy.val) &#123;
+              local.next = headCopy; 
+              headCopy = local;
+          &#125; <span class="hljs-keyword">else</span> &#123;
+               <span class="hljs-comment">// loop through the first part to insert the node </span>
+            <span class="hljs-type">ListNode</span> <span class="hljs-variable">insertTraverse</span> <span class="hljs-operator">=</span> headCopy;
+            <span class="hljs-type">int</span> <span class="hljs-variable">insertTraverseCount</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+                <span class="hljs-comment">//local invariants: insertTraverse.val is smaller than local.val but insertTraverse.next.val is bigger</span>
+                <span class="hljs-keyword">while</span> (insertTraverseCount &lt; localTraverseCount &amp;&amp; insertTraverse.val &lt; local.val &amp;&amp; insertTraverse.next.val &lt; local.val) &#123;
+                  insertTraverse = insertTraverse.next;  
+                    insertTraverseCount++;
+                &#125;
+                <span class="hljs-comment">// termination: it&#x27;s own place, or found a node whose .next.val is bigger</span>
+                <span class="hljs-comment">// insert local after insertTraverse</span>
+                   <span class="hljs-type">ListNode</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> insertTraverse.next; 
+                insertTraverse.next = local;
+                local.next = temp;
+                <span class="hljs-keyword">if</span> (insertTraverseCount == localTraverseCount) &#123;
+                   localPrev = local; 
+                 &#125;
+              &#125; 
+              localTraverseCount++;
+            local = next;
+        &#125;
+        
+        <span class="hljs-keyword">return</span> headCopy;
+    &#125;
+&#125;</code></pre>
+<ul>
+<li>given solutions:</li>
+</ul>
+<pre><code class="hljs java"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">insertionSortList</span><span class="hljs-params">(ListNode head)</span> &#123;
+    <span class="hljs-type">ListNode</span> <span class="hljs-variable">dummy</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ListNode</span>();
+    <span class="hljs-type">ListNode</span> <span class="hljs-variable">curr</span> <span class="hljs-operator">=</span> head;
+
+    <span class="hljs-keyword">while</span> (curr != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-comment">// At each iteration, we insert an element into the resulting list.</span>
+        <span class="hljs-type">ListNode</span> <span class="hljs-variable">prev</span> <span class="hljs-operator">=</span> dummy;
+
+        <span class="hljs-comment">// find the position to insert the current node</span>
+        <span class="hljs-keyword">while</span> (prev.next != <span class="hljs-literal">null</span> &amp;&amp; prev.next.val &lt; curr.val) &#123;
+            prev = prev.next;
+        &#125;
+
+        <span class="hljs-type">ListNode</span> <span class="hljs-variable">next</span> <span class="hljs-operator">=</span> curr.next;
+        <span class="hljs-comment">// insert the current node to the new list</span>
+        curr.next = prev.next;
+        prev.next = curr;
+
+        <span class="hljs-comment">// moving on to the next iteration</span>
+        curr = next;
+    &#125;
+
+    <span class="hljs-keyword">return</span> dummy.next;
+&#125;</code></pre>
+<p><em><a target="_blank" rel="noopener" href="https://leetcode.com/problems/insertion-sort-list/">https://leetcode.com/problems/insertion-sort-list/</a></em></p>
+<h1>Selection Sort</h1>
+<h2 id="Keys-3">Keys</h2>
+<ul>
+<li>for for loop</li>
+<li><code>swap(i, minSoFar)</code></li>
+</ul>
+<h2 id="Examples">Examples</h2>
+<ul>
+<li>sort an array with two stacks</li>
+<li>sort an array with one stack</li>
+</ul>
+<h2 id="Code-2">Code</h2>
+<h3 id="selection-sort">selection sort</h3>
+<pre><code class="hljs java"><span class="hljs-comment">// Selection sort in Java</span>
+
+<span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">SelectionSort</span> &#123;
+  <span class="hljs-keyword">void</span> <span class="hljs-title function_">selectionSort</span><span class="hljs-params">(<span class="hljs-type">int</span> array[])</span> &#123;
+    <span class="hljs-type">int</span> <span class="hljs-variable">size</span> <span class="hljs-operator">=</span> array.length;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">step</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; step &lt; size - <span class="hljs-number">1</span>; step++) &#123;
+      <span class="hljs-type">int</span> <span class="hljs-variable">min_idx</span> <span class="hljs-operator">=</span> step;
+
+      <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> step + <span class="hljs-number">1</span>; i &lt; size; i++) &#123;
+
+        <span class="hljs-comment">// To sort in descending order, change &gt; to &lt; in this line.</span>
+        <span class="hljs-comment">// Select the minimum element in each loop.</span>
+        <span class="hljs-keyword">if</span> (array[i] &lt; array[min_idx]) &#123;
+          min_idx = i;
+        &#125;
+      &#125;
+
+      <span class="hljs-comment">// put min at the correct position</span>
+      swap(array, min_idx, step);
+    &#125;
+  &#125;
+
+  <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(array, x, y)</span> &#123;
+      <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> array[x];
+      array[x] = array[y];
+      array[y] = temp;
+  &#125;
+
+  <span class="hljs-comment">// driver code</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;
+    <span class="hljs-type">int</span>[] data = &#123; <span class="hljs-number">20</span>, <span class="hljs-number">12</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">2</span> &#125;;
+    <span class="hljs-type">SelectionSort</span> <span class="hljs-variable">ss</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SelectionSort</span>();
+    ss.selectionSort(data);
+    System.out.println(<span class="hljs-string">&quot;Sorted Array in Ascending Order: &quot;</span>);
+    System.out.println(Arrays.toString(data));
+  &#125;
+&#125;</code></pre>
+<h3 id="stacks">stacks</h3>
+<pre><code class="hljs java"><span class="hljs-comment">// Java program to sort an</span>
+<span class="hljs-comment">// array using stack</span>
+<span class="hljs-keyword">import</span> java.io.*;
+<span class="hljs-keyword">import</span> java.util.*;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">GFG</span>
+&#123;
+	<span class="hljs-comment">// This function return the sorted stack</span>
+	<span class="hljs-keyword">static</span> Stack&lt;Integer&gt; <span class="hljs-title function_">sortStack</span><span class="hljs-params">(Stack&lt;Integer&gt; input)</span>
+	&#123;
+		Stack&lt;Integer&gt; tmpStack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>&lt;Integer&gt;();
+	
+		<span class="hljs-keyword">while</span> (!input.empty())
+		&#123;
+			<span class="hljs-comment">// pop out the first element</span>
+			<span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> input.peek();
+			input.pop();
+	
+			<span class="hljs-comment">// while temporary stack is not empty and top of stack is smaller than temp</span>
+			<span class="hljs-keyword">while</span> (!tmpStack.empty() &amp;&amp; tmpStack.peek() &lt; tmp)
+			&#123;
+				<span class="hljs-comment">// pop from temporary stack and push it to the input stack</span>
+				input.push(tmpStack.peek());
+				tmpStack.pop();
+			&#125;
+	
+			<span class="hljs-comment">// push tmp in temporary of stack</span>
+			tmpStack.push(tmp);
+		&#125;
+	
+		<span class="hljs-keyword">return</span> tmpStack;
+	&#125;
+	
+	<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sortArrayUsingStacks</span><span class="hljs-params">(<span class="hljs-type">int</span> []arr, <span class="hljs-type">int</span> n)</span>
+	&#123;
+		<span class="hljs-comment">// push array elements</span>
+		<span class="hljs-comment">// to stack</span>
+		Stack&lt;Integer&gt; input = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>&lt;Integer&gt;();
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)
+			input.push(arr[i]);
+	
+		<span class="hljs-comment">// Sort the temporary stack</span>
+		Stack&lt;Integer&gt; tmpStack = sortStack(input);
+	
+		<span class="hljs-comment">// Put stack elements in arr[]</span>
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)
+		&#123;
+			arr[i] = tmpStack.peek();
+			tmpStack.pop();
+		&#125;
+	&#125;
+	
+	<span class="hljs-comment">// Driver Code</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>
+	&#123;
+		<span class="hljs-type">int</span> []arr = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">5</span>, <span class="hljs-number">15</span>, <span class="hljs-number">45</span>&#125;;
+		<span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> arr.length;
+	
+		sortArrayUsingStacks(arr, n);
+	
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)
+			System.out.print(arr[i] + <span class="hljs-string">&quot; &quot;</span>);
+	&#125;
+&#125;</code></pre>
+<p><em><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/sorting-array-using-stacks/">https://www.geeksforgeeks.org/sorting-array-using-stacks/</a></em></p>
+<h1>Merge Sort</h1>
+<p><img src="/2022/03/06/Sorting/Merge-Sort-Tutorial.png" alt="Merge Sort"></p>
+<h2 id="Keys-4">Keys</h2>
+<ul>
+<li>Divide and conquer</li>
+<li>Divide, Conquer, Combine</li>
+</ul>
+<h2 id="Psudo-code">Psudo code</h2>
+<pre><code class="hljs plaintext">MergeSort(A, p, r)
+if p &lt; r
+    q = [p + r] / 2
+    MergeSort(A, p, q)
+    MergeSort(A, q + 1, r)
+    Merge(A, p, q, r)
+
+Merge(A, p, q, r)</code></pre>
+<h2 id="Code-3">Code</h2>
+<pre><code class="hljs java"><span class="hljs-comment">/* Java program for Merge Sort */</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MergeSort</span>
+&#123;
+	<span class="hljs-comment">// Merges two subarrays of arr[].</span>
+	<span class="hljs-comment">// First subarray is arr[l..m]</span>
+	<span class="hljs-comment">// Second subarray is arr[m+1..r]</span>
+	<span class="hljs-keyword">void</span> <span class="hljs-title function_">merge</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[], <span class="hljs-type">int</span> l, <span class="hljs-type">int</span> m, <span class="hljs-type">int</span> r)</span>
+	&#123;
+		<span class="hljs-comment">// Find sizes of two subarrays to be merged</span>
+		<span class="hljs-type">int</span> <span class="hljs-variable">n1</span> <span class="hljs-operator">=</span> m - l + <span class="hljs-number">1</span>;
+		<span class="hljs-type">int</span> <span class="hljs-variable">n2</span> <span class="hljs-operator">=</span> r - m;
+
+		<span class="hljs-comment">/* Create temp arrays */</span>
+		<span class="hljs-type">int</span> L[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n1];
+		<span class="hljs-type">int</span> R[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n2];
+
+		<span class="hljs-comment">/*Copy data to temp arrays*/</span>
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n1; ++i)
+			L[i] = arr[l + i];
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n2; ++j)
+			R[j] = arr[m + <span class="hljs-number">1</span> + j];
+
+		<span class="hljs-comment">/* Merge the temp arrays */</span>
+
+		<span class="hljs-comment">// Initial indexes of first and second subarrays</span>
+		<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;
+
+		<span class="hljs-comment">// Initial index of merged subarray array</span>
+		<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> l;
+		<span class="hljs-keyword">while</span> (i &lt; n1 &amp;&amp; j &lt; n2) &#123;
+			<span class="hljs-keyword">if</span> (L[i] &lt;= R[j]) &#123;
+				arr[k] = L[i];
+				i++;
+			&#125;
+			<span class="hljs-keyword">else</span> &#123;
+				arr[k] = R[j];
+				j++;
+			&#125;
+			k++;
+		&#125;
+
+		<span class="hljs-comment">/* Copy remaining elements of L[] if any */</span>
+		<span class="hljs-keyword">while</span> (i &lt; n1) &#123;
+			arr[k] = L[i];
+			i++;
+			k++;
+		&#125;
+
+		<span class="hljs-comment">/* Copy remaining elements of R[] if any */</span>
+		<span class="hljs-keyword">while</span> (j &lt; n2) &#123;
+			arr[k] = R[j];
+			j++;
+			k++;
+		&#125;
+	&#125;
+
+	<span class="hljs-comment">// Main function that sorts arr[l..r] using</span>
+	<span class="hljs-comment">// merge()</span>
+	<span class="hljs-keyword">void</span> <span class="hljs-title function_">sort</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[], <span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span>
+	&#123;
+		<span class="hljs-keyword">if</span> (l &lt; r) &#123;
+			<span class="hljs-comment">// Find the middle point</span>
+			<span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span>l+ (r-l)/<span class="hljs-number">2</span>;
+
+			<span class="hljs-comment">// Sort first and second halves</span>
+			sort(arr, l, m);
+			sort(arr, m + <span class="hljs-number">1</span>, r);
+
+			<span class="hljs-comment">// Merge the sorted halves</span>
+			merge(arr, l, m, r);
+		&#125;
+	&#125;
+
+	<span class="hljs-comment">/* A utility function to print array of size n */</span>
+	<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printArray</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[])</span>
+	&#123;
+		<span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> arr.length;
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i)
+			System.out.print(arr[i] + <span class="hljs-string">&quot; &quot;</span>);
+		System.out.println();
+	&#125;
+
+	<span class="hljs-comment">// Driver code</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>
+	&#123;
+		<span class="hljs-type">int</span> arr[] = &#123; <span class="hljs-number">12</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span> &#125;;
+
+		System.out.println(<span class="hljs-string">&quot;Given Array&quot;</span>);
+		printArray(arr);
+
+		<span class="hljs-type">MergeSort</span> <span class="hljs-variable">ob</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MergeSort</span>();
+		ob.sort(arr, <span class="hljs-number">0</span>, arr.length - <span class="hljs-number">1</span>);
+
+		System.out.println(<span class="hljs-string">&quot;\nSorted array&quot;</span>);
+		printArray(arr);
+	&#125;
+&#125;
+</code></pre>
+<p><em><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/merge-sort/">https://www.geeksforgeeks.org/merge-sort/</a></em></p>
+<p>Merge Two sorted arrays, in place.</p>
+<p>Keys:</p>
+<ul>
+<li>principle: three pointers</li>
+<li>in order not to override, it’s best to move from right to left. so the condition need to check which bigger instead of who’s smaller</li>
+<li>my first thought was moving all the elements of nums1 to the end and go from left. it works too, but there’s more to write.</li>
+<li>how to write the condition is worth memorizing</li>
+</ul>
+<pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">merge</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span> m, <span class="hljs-type">int</span>[] nums2, <span class="hljs-type">int</span> n)</span> &#123;
+    <span class="hljs-type">int</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> m - <span class="hljs-number">1</span>;
+    <span class="hljs-type">int</span> <span class="hljs-variable">q</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">1</span>;
+    
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> m + n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;
+        <span class="hljs-comment">// positive condition: when will we need to </span>
+        <span class="hljs-comment">// swap with nums1</span>
+        <span class="hljs-comment">// 1. when nums1 still has elements and nums2 is out</span>
+        <span class="hljs-comment">// 2. when nums1 still has elements and nums1[p] &gt; nums2[q]</span>
+        <span class="hljs-comment">// notes: it&#x27;s &quot;&gt;&quot; because we go from right to left. </span>
+        <span class="hljs-keyword">if</span> (p &gt;= <span class="hljs-number">0</span> &amp;&amp; (q &lt; <span class="hljs-number">0</span> || (nums1[p] &gt; nums2[q]))) &#123;
+            nums1[i] = nums1[p--];
+            <span class="hljs-keyword">continue</span>;
+        &#125;
+        nums1[i] = nums2[q--];
+    &#125;
+&#125;</code></pre>
+<p><em><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-sorted-array/">https://leetcode.com/problems/merge-sorted-array/</a></em></p>
+<h1>Heapsort</h1>
+<p>Keys:</p>
+<ul>
+<li>heapify the whole array</li>
+<li>keep swapping with the largest element</li>
+</ul>
+<p>Can be used to implement a priority queue<br>
+Time Complexity: O(nlog(n))</p>
+<h1>Quick Sort</h1>
+<h2 id="Psudo">Psudo</h2>
+<details> 
+    <summary>Psudo</summary>
+<pre><code class="hljs plaintext">PARTITION(A, p, r) 
+ x = A[r]
+ i = p - 1
+ for j = p to r - 1
+    if (A[j] &lt;= x)
+        i = i + 1
+        swap(A[i], A[j])
+ swap(A[r], A[i+1])
+ return i+1;
+
+//--------Normal quicksort--------
+QUICKSORT(A, p, r)
+ if p &lt; r 
+    q = PARTATION(A, p, r)
+    QUICKSORT(A, p, q -1) 
+    QUICKSORT(A, q + 1, r) 
+
+//--------Tail quicksort--------
+TAIL-RECURSIVE-QUICKSORT(A, p, r)
+ while(p &lt; r) 
+    q = PARTITION(A, p, r)
+    TAIL-RECURSIVE-QUICKSORT(A, p, q - 1)
+    p = q + 1
+
+//--------Tail quicksort with logn most depth:sub-call on the smaller half--------
+TAIL-RECURSIVE-QUICKSORT(A, p, r)
+ while(p &lt; r) 
+    q = PARTITION(A, p, r)
+    if (p - q &gt; r - p) 
+      TAIL-RECURSIVE-QUICKSORT(A, p, q - 1)
+      p = q + 1
+    else
+      TAIL-RECURSIVE-QUICKSORT(A, q + 1, r)
+      r = q - 1</code></pre>
+</details>
+<h2 id="Sorting-related-problems">Sorting related problems</h2>
+<p>Merge Intervals</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-intervals/">https://leetcode.com/problems/merge-intervals/</a></li>
+<li>Keys:
+<ul>
+<li>sort the array based on the first value, then use a stack to linear scan back.</li>
+<li>
+<details> 
+</li>
+</ul>
+  <summary> My attempt</summary>
+</li>
+</ul>
+<pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] merge(<span class="hljs-type">int</span>[][] intervals) &#123;
+        <span class="hljs-comment">// sort intervals based on the start time</span>
+        <span class="hljs-comment">// quick sort it</span>
+        quicksort(intervals, <span class="hljs-number">0</span>, intervals.length - <span class="hljs-number">1</span>);
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span>[] interval : intervals) &#123;
+          System.out.println(interval[<span class="hljs-number">0</span>] + <span class="hljs-string">&quot; &quot;</span> + interval[<span class="hljs-number">1</span>]);
+        &#125;
+        Stack&lt;<span class="hljs-type">int</span>[]&gt; stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>();
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] interval: intervals) &#123;
+            <span class="hljs-keyword">if</span> (stack.isEmpty() || interval[<span class="hljs-number">0</span>] &gt; stack.peek()[<span class="hljs-number">1</span>]) &#123;
+                stack.push(interval);
+            &#125; <span class="hljs-keyword">else</span> &#123;
+               stack.peek()[<span class="hljs-number">1</span>] = Math.max(interval[<span class="hljs-number">1</span>],stack.peek()[<span class="hljs-number">1</span>]); 
+            &#125;
+        &#125;
+        <span class="hljs-type">int</span>[][] ret = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[stack.size()][<span class="hljs-number">2</span>];
+        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> stack.size() - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span>(!stack.isEmpty()) &#123;
+            ret[i--] = stack.pop();
+        &#125;
+       <span class="hljs-keyword">return</span> ret; 
+    &#125;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quicksort</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] intervals, <span class="hljs-type">int</span> q, <span class="hljs-type">int</span> r)</span> &#123;
+       <span class="hljs-keyword">while</span> (q &lt; r)  &#123;
+           <span class="hljs-type">int</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> partition(intervals, q, r);
+           <span class="hljs-keyword">if</span> (q - p &lt; r - p) &#123;
+             quicksort(intervals, q, p - <span class="hljs-number">1</span>);
+             q = p + <span class="hljs-number">1</span>;
+           &#125; <span class="hljs-keyword">else</span> &#123;
+             quicksort(intervals, p + <span class="hljs-number">1</span>, r);
+             r = p - <span class="hljs-number">1</span>;
+           &#125;
+       &#125;
+    &#125;
+    
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-title function_">partition</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] intervals, <span class="hljs-type">int</span> q, <span class="hljs-type">int</span> r)</span> &#123;
+       <span class="hljs-type">int</span>[] pi = intervals[r];
+       <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> q - <span class="hljs-number">1</span>; 
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> q; j &lt; r; j++) &#123;
+            <span class="hljs-keyword">if</span> (intervals[j][<span class="hljs-number">0</span>] &lt;= pi[<span class="hljs-number">0</span>]) &#123;
+                i++;
+                swap(intervals, i, j);
+            &#125;
+        &#125;
+        swap(intervals, i + <span class="hljs-number">1</span>, r);
+        <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;
+    &#125;
+    
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] intervals, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;
+        <span class="hljs-type">int</span>[] temp = intervals[i];
+        intervals[i] = intervals[j];
+        intervals[j] = temp;
+    &#125;
+&#125;</code></pre>
+   </details>  
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2022/03/06/Sorting/" title="Sorting" target="_blank" rel="external">http://example.com/2022/03/06/Sorting/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/deyikong" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://www.gravatar.com/avatar/5a8ce3f96167467fcfaebda99f45b252?s=128" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/deyikong" target="_blank"><span class="text-dark">Deyi Kong</span><small class="ml-1x">Senior Software Engineer</small></a></h3>
+        <div>Keep on fighting</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/03/06/Fundamental/" title="Fundamental"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/03/05/start/" title="Start My Algorithm Journey"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/deyikong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://twitter.com/CuriousScorpio" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.facebook.com/deyi.kong.awesome" target="_blank" title="Facebook" data-toggle=tooltip data-placement=top><i class="icon icon-facebook"></i></a></li>
+        
+        <li><a href="https://www.linkedin.com/in/deyikong/" target="_blank" title="Linkedin" data-toggle=tooltip data-placement=top><i class="icon icon-linkedin"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2022 Deyi Kong
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Let me know what you think',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
+
+
+
+
+</body>
+</html>
