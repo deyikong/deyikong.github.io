@@ -26,7 +26,7 @@
 <meta property="og:description" content="How to approach OOP interview questions If you have problems with OOP technical interviews, here are some pointers on how to approach this kind of problems.  outline (bottom up): write all the classe">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-28T01:13:43.000Z">
-<meta property="article:modified_time" content="2022-04-28T03:21:58.674Z">
+<meta property="article:modified_time" content="2022-04-28T03:55:54.131Z">
 <meta property="article:author" content="Deyi Kong">
 <meta property="article:tag" content="interview">
 <meta property="article:tag" content="technical">
@@ -130,6 +130,16 @@
             <i class="icon icon-tags"></i>
             
             <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
           </a>
         </li>
         
@@ -243,7 +253,7 @@
                 <a href="/2022/04/28/Sorting/" class="title">(no title)</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-28T03:21:58.674Z" itemprop="datePublished">2022-04-27</time>
+                <time datetime="2022-04-28T03:55:54.131Z" itemprop="datePublished">2022-04-27</time>
               </p>
             </div>
           </li>
@@ -408,7 +418,7 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="how-to-approach-oop-interview-questions"><a class="markdownIt-Anchor" href="#how-to-approach-oop-interview-questions"></a> How to approach OOP interview questions</h2>
+        <h1 id="how-to-approach-oop-interview-questions"><a class="markdownIt-Anchor" href="#how-to-approach-oop-interview-questions"></a> How to approach OOP interview questions</h1>
 <p>If you have problems with OOP technical interviews, here are some pointers on how to approach this kind of problems.</p>
 <ol>
 <li>outline (bottom up): write all the classes/components from small scope to big scope</li>
@@ -422,10 +432,10 @@
 <li>changes (bottom up): if there’s any structural changes(deletion, addition, modification) on a particular part of the code, trace all places that used these changed part bottom up.</li>
 </ol>
 <p>For example, designing an Excel, each cell has it’s own styles(font, size, color, etc), each cell can have different types of data(integer, string, boolean, etc), users can append or insert rows or columns</p>
-<h3 id="first-step-outlinebottom-up"><a class="markdownIt-Anchor" href="#first-step-outlinebottom-up"></a> First step: outline(bottom up)：</h3>
+<h2 id="first-step-outlinebottom-up"><a class="markdownIt-Anchor" href="#first-step-outlinebottom-up"></a> First step: outline(bottom up)：</h2>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Cell</span>&lt;T&gt; &#123;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Row</span> &#123;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Sheet</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="second-step-implementation-top-down"><a class="markdownIt-Anchor" href="#second-step-implementation-top-down"></a> Second Step: implementation (top down):</h3>
-<h4 id="start-filling-the-classes-from-top-down"><a class="markdownIt-Anchor" href="#start-filling-the-classes-from-top-down"></a> start filling the classes from top down</h4>
+<h2 id="second-step-implementation-top-down"><a class="markdownIt-Anchor" href="#second-step-implementation-top-down"></a> Second Step: implementation (top down):</h2>
+<h3 id="start-filling-the-classes-from-top-down"><a class="markdownIt-Anchor" href="#start-filling-the-classes-from-top-down"></a> start filling the classes from top down</h3>
 <p>Start with the Sheet’s constructor and some properties, on first thought, we just need an empty constructor</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Sheet</span> <span class="params">()</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>However, because we might need the dimension of the sheet upon constructing, either passed by user or by default. so we need a list of rows first, and the global column.</p>
@@ -452,8 +462,8 @@ Last also start with the constructor, we already know the signature from the cod
 <p>This, in turns, determines one function <code>set</code> for <code>Row</code>, so let’s do that.</p>
 <figure class="highlight java"><figcaption><span>add to Row</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(<span class="type">int</span> col,Cell cell)</span> &#123;</span><br><span class="line">    row.set(col, cell); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>That’s it, if we want to update cells.</p>
-<h3 id="third-step-changes-bottom-up"><a class="markdownIt-Anchor" href="#third-step-changes-bottom-up"></a> Third Step: Changes (bottom up)</h3>
-<h4 id="in-our-current-situation-we-have-font-size-and-bold-in-each-cell-however-what-if-we-want-to-select-a-range-of-cells-and-apply-the-same-style-to-these-cells-so-that-requires-changes-in-our-cell-class-so-lets-create-a-style-class-thats-shared-across-more-than-one-cell"><a class="markdownIt-Anchor" href="#in-our-current-situation-we-have-font-size-and-bold-in-each-cell-however-what-if-we-want-to-select-a-range-of-cells-and-apply-the-same-style-to-these-cells-so-that-requires-changes-in-our-cell-class-so-lets-create-a-style-class-thats-shared-across-more-than-one-cell"></a> In our current situation, we have <code>font</code>, <code>size</code> and <code>bold</code> in each <code>Cell</code>, however, what if we want to select a range of cells and apply the same style to these Cells. so that requires changes in our <code>Cell</code> class, so let’s create a <code>Style</code> class that’s shared across more than one Cell.</h4>
+<h2 id="third-step-changes-bottom-up"><a class="markdownIt-Anchor" href="#third-step-changes-bottom-up"></a> Third Step: Changes (bottom up)</h2>
+<h3 id="in-our-current-situation-we-have-font-size-and-bold-in-each-cell-however-what-if-we-want-to-select-a-range-of-cells-and-apply-the-same-style-to-these-cells-so-that-requires-changes-in-our-cell-class-so-lets-create-a-style-class-thats-shared-across-more-than-one-cell"><a class="markdownIt-Anchor" href="#in-our-current-situation-we-have-font-size-and-bold-in-each-cell-however-what-if-we-want-to-select-a-range-of-cells-and-apply-the-same-style-to-these-cells-so-that-requires-changes-in-our-cell-class-so-lets-create-a-style-class-thats-shared-across-more-than-one-cell"></a> In our current situation, we have <code>font</code>, <code>size</code> and <code>bold</code> in each <code>Cell</code>, however, what if we want to select a range of cells and apply the same style to these Cells. so that requires changes in our <code>Cell</code> class, so let’s create a <code>Style</code> class that’s shared across more than one Cell.</h3>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Cell</span>&lt;T&gt; &#123;</span><br><span class="line">    Style style;</span><br><span class="line">    T content;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Cell</span> <span class="params">(T content)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>(content, <span class="keyword">new</span> <span class="title class_">Style</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Cell</span> <span class="params">(T content, Style style)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.content = content;</span><br><span class="line">        <span class="built_in">this</span>.style = style;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Style</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">font</span> <span class="operator">=</span> <span class="string">&quot;Hei&quot;</span> ;</span><br><span class="line">    <span class="type">double</span> <span class="variable">size</span> <span class="operator">=</span> <span class="number">12</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">bold</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Noticed that we added a style as a constructor param to <code>Cell</code>, you don’t have to add it to the constructor if you want to create a setter(in java) or a property(in C#) or a variable (in PHP).</p>
 <p>Now, because we changed the cell, we need to go bottom-up styles to fix all the places it sifts up to. Let’s keep a mental queue to add what we need to modify next (just like BFS*).</p>
@@ -550,7 +560,7 @@ So the queue is empty now, so that means we are done with the effect by extracti
   
   <div class="bar-right">
     
-    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    <div class="share-component" data-sites="facebook,twitter,weibo,qq,wechat" data-mobile-sites="facebook,twitter,wechat,weibo"></div>
     
   </div>
   </div>
