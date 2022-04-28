@@ -1,7 +1,13 @@
 ---
 title: Trie
 date: 2022-04-02 22:31:32
-tags:
+tags: 
+    - algorithms 
+    - technical
+    - leetcode
+    - trie
+categories:
+    - algorithms
 ---
 
 ##Search Suggestion System: https://leetcode.com/problems/search-suggestions-system/

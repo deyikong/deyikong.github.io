@@ -1,8 +1,13 @@
 ---
 title: Sorting
 date: 2022-03-05 18:53:41
-tags:
----
+tags: 
+    - algorithms 
+    - technical
+    - leetcode
+    - sorting
+categories:
+    - algorithms
 
 # Insertion Sort
 

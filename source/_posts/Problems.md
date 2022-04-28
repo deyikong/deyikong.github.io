@@ -5,7 +5,8 @@ tags:
     - algorithms 
     - technical
     - leetcode
-    
+categories:
+    - algorithms
 ---
 
 # 04/05/2022

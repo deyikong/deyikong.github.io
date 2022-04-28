@@ -1,7 +1,14 @@
 ---
 title: Binary Search
 date: 2022-03-05 22:19:39
-tags:
+tags: 
+    - algorithm
+    - interview
+    - technical
+    - leetcode
+    - binary search
+categories:
+    - algorithms
 ---
 
 ## Concepts

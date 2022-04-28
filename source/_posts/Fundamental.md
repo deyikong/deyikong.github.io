@@ -1,7 +1,13 @@
 ---
 title: Fundamental
 date: 2022-03-05 19:51:47
-tags:
+tags: 
+    - algorithms 
+    - technical
+    - leetcode
+    - fundamentals
+categories:
+    - algorithms
 ---
 
 ###  Loop Invariants

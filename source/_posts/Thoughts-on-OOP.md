@@ -4,6 +4,10 @@ date: 2022-04-27 20:13:43
 tags: 
     - OOP
     - interview
+    - technical
+    - leetcode
+categories:
+    - algorithms
 ---
 
 ## How to approach OOP interview questions

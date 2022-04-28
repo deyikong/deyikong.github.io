@@ -1,7 +1,13 @@
 ---
 title: Kth Biggest
 date: 2022-04-20 21:13:31
-tags:
+tags: 
+    - algorithms 
+    - technical
+    - leetcode
+    - kth biggest
+categories:
+    - algorithms
 ---
 
 ## Kth Largest Element in an Array

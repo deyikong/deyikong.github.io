@@ -1,7 +1,13 @@
 ---
 title: Sum
 date: 2022-03-06 01:40:41
-tags: sum
+tags: 
+    - algorithms 
+    - technical
+    - leetcode
+    - sum
+categories:
+    - algorithms
 ---
 ## Two Sum
 Keys: 
