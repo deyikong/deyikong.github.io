@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2022/03/18/Binary-Search-Tree/</loc>
+    <loc>https://deyikong.github.io/tags/index.html</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/06/Binary-Search/</loc>
+    <loc>https://deyikong.github.io/2022/03/18/Binary-Search-Tree/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/12/Bucket-Sort-And-Meeting-Rooms/</loc>
+    <loc>https://deyikong.github.io/2022/03/06/Binary-Search/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/06/Fundamental/</loc>
+    <loc>https://deyikong.github.io/2022/04/12/Bucket-Sort-And-Meeting-Rooms/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/21/Kth-Biggest/</loc>
+    <loc>https://deyikong.github.io/2022/03/06/Fundamental/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/06/Sorting/</loc>
+    <loc>https://deyikong.github.io/2022/04/21/Kth-Biggest/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/06/Sum/</loc>
+    <loc>https://deyikong.github.io/2022/03/06/Sorting/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/28/Thoughts-on-OOP/</loc>
+    <loc>https://deyikong.github.io/2022/03/06/Sum/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/03/Trie/</loc>
+    <loc>https://deyikong.github.io/2022/04/28/Thoughts-on-OOP/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/05/start/</loc>
+    <loc>https://deyikong.github.io/2022/04/03/Trie/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/05/Problems/</loc>
+    <loc>https://deyikong.github.io/2022/03/05/start/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
+    <loc>https://deyikong.github.io/2022/04/05/Problems/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>https://deyikong.github.io/about/index.html</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
+    <loc>https://deyikong.github.io/categories/index.html</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -129,7 +129,7 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>https://deyikong.github.io/</loc>
     <lastmod>2022-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -137,42 +137,42 @@
 
   
   <url>
-    <loc>http://example.com/tags/sum/</loc>
+    <loc>https://deyikong.github.io/tags/sum/</loc>
     <lastmod>2022-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/OOP/</loc>
+    <loc>https://deyikong.github.io/tags/OOP/</loc>
     <lastmod>2022-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/interview/</loc>
+    <loc>https://deyikong.github.io/tags/interview/</loc>
     <lastmod>2022-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/algorithms/</loc>
+    <loc>https://deyikong.github.io/tags/algorithms/</loc>
     <lastmod>2022-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/technical/</loc>
+    <loc>https://deyikong.github.io/tags/technical/</loc>
     <lastmod>2022-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/leetcode/</loc>
+    <loc>https://deyikong.github.io/tags/leetcode/</loc>
     <lastmod>2022-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
