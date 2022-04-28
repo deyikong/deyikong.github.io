@@ -8,6 +8,10 @@ tags:
     - leetcode
 categories:
     - algorithms
+excerpt: 'Object Oriented Programming Guide'
+photos: 
+    - Thoughts-on-OOP/oop.jpeg
+
 ---
 
 # How to approach OOP interview questions
