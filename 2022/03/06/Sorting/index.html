@@ -18,16 +18,16 @@
   
   
   <title>Sorting | Hexo</title>
-  <meta name="description" content="Insertion Sort Keys  playing card sorted part + unsorted part insert in sorted array  Code array import java.util.*; class GFG &amp;#123; &#x2F;&#x2F; Function to sort an array using insertion sort static void inse">
+  <meta name="description" content="Insertion Sort  Keys  playing card sorted part + unsorted part insert in sorted array   Code  array 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849import jav">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sorting">
 <meta property="og:url" content="https://deyikong.github.io/2022/03/06/Sorting/index.html">
 <meta property="og:site_name" content="Deyi Kong">
-<meta property="og:description" content="Insertion Sort Keys  playing card sorted part + unsorted part insert in sorted array  Code array import java.util.*; class GFG &amp;#123; &#x2F;&#x2F; Function to sort an array using insertion sort static void inse">
+<meta property="og:description" content="Insertion Sort  Keys  playing card sorted part + unsorted part insert in sorted array   Code  array 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849import jav">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://deyikong.github.io/2022/03/06/Sorting/Merge-Sort-Tutorial.png">
 <meta property="article:published_time" content="2022-03-06T00:53:41.000Z">
-<meta property="article:modified_time" content="2022-04-28T01:29:16.013Z">
+<meta property="article:modified_time" content="2022-04-28T03:03:37.452Z">
 <meta property="article:author" content="Deyi Kong">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://deyikong.github.io/2022/03/06/Sorting/Merge-Sort-Tutorial.png">
@@ -108,36 +108,6 @@
             <i class="icon icon-home-fill"></i>
             
             <span class="menu-title">Home</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">Archives</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            
-            <i class="icon icon-folder"></i>
-            
-            <span class="menu-title">Categories</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags">
-            
-            <i class="icon icon-tags"></i>
-            
-            <span class="menu-title">Tags</span>
           </a>
         </li>
         
@@ -399,388 +369,54 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1>Insertion Sort</h1>
-<h2 id="Keys-2">Keys</h2>
+        <h1 id="insertion-sort"><a class="markdownIt-Anchor" href="#insertion-sort"></a> Insertion Sort</h1>
+<h2 id="keys"><a class="markdownIt-Anchor" href="#keys"></a> Keys</h2>
 <ul>
 <li>playing card</li>
 <li>sorted part + unsorted part</li>
 <li>insert in sorted array</li>
 </ul>
-<h2 id="Code">Code</h2>
-<h3 id="array">array</h3>
-<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">GFG</span>
-&#123;
-<span class="hljs-comment">// Function to sort an array using insertion sort</span>
-<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">insertionSort</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[], <span class="hljs-type">int</span> n)</span>
-&#123;
-	<span class="hljs-type">int</span> i, key, j;
-	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt; n; i++)
-	&#123;
-		key = arr[i];
-		j = i - <span class="hljs-number">1</span>;
-
-		<span class="hljs-comment">// Move elements of arr[0..i-1],</span>
-		<span class="hljs-comment">// that are greater than key to</span>
-		<span class="hljs-comment">// one position ahead of their</span>
-		<span class="hljs-comment">// current position</span>
-		<span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; key)
-		&#123;
-			arr[j + <span class="hljs-number">1</span>] = arr[j];
-			j = j - <span class="hljs-number">1</span>;
-		&#125;
-		arr[j + <span class="hljs-number">1</span>] = key;
-	&#125;
-&#125;
-
-<span class="hljs-comment">// Function to print an array of size N</span>
-<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printArray</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[], <span class="hljs-type">int</span> n)</span>
-&#123;
-	<span class="hljs-type">int</span> i;
-
-	<span class="hljs-comment">// Print the array</span>
-	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;
-		System.out.print(arr[i] + <span class="hljs-string">&quot; &quot;</span>);
-	&#125;
-	System.out.println();
-&#125;
-
-<span class="hljs-comment">// Driver code</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>
-&#123;
-	<span class="hljs-type">int</span> arr[] = &#123; <span class="hljs-number">12</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span> &#125;;
-	<span class="hljs-type">int</span> <span class="hljs-variable">N</span> <span class="hljs-operator">=</span> arr.length;
-
-	<span class="hljs-comment">// Function Call</span>
-	insertionSort(arr, N);
-	printArray(arr, N);
-&#125;
-&#125;
-</code></pre>
-<h3 id="Singly-linkedlist">Singly linkedlist</h3>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2>
+<h3 id="array"><a class="markdownIt-Anchor" href="#array"></a> array</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GFG</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// Function to sort an array using insertion sort</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">insertionSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i, key, j;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		key = arr[i];</span><br><span class="line">		j = i - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Move elements of arr[0..i-1],</span></span><br><span class="line">		<span class="comment">// that are greater than key to</span></span><br><span class="line">		<span class="comment">// one position ahead of their</span></span><br><span class="line">		<span class="comment">// current position</span></span><br><span class="line">		<span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; key)</span><br><span class="line">		&#123;</span><br><span class="line">			arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">			j = j - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[j + <span class="number">1</span>] = key;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Function to print an array of size N</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Print the array</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		System.out.print(arr[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Driver code</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> arr[] = &#123; <span class="number">12</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">5</span>, <span class="number">6</span> &#125;;</span><br><span class="line">	<span class="type">int</span> <span class="variable">N</span> <span class="operator">=</span> arr.length;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Function Call</span></span><br><span class="line">	insertionSort(arr, N);</span><br><span class="line">	printArray(arr, N);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="singly-linkedlist"><a class="markdownIt-Anchor" href="#singly-linkedlist"></a> Singly linkedlist</h3>
 <ul>
 <li>My solution (not optimal, hard to remember)</li>
 </ul>
-<pre><code class="hljs java"><span class="hljs-comment">/**</span>
-<span class="hljs-comment"> * Definition for singly-linked list.</span>
-<span class="hljs-comment"> * public class ListNode &#123;</span>
-<span class="hljs-comment"> *     int val;</span>
-<span class="hljs-comment"> *     ListNode next;</span>
-<span class="hljs-comment"> *     ListNode() &#123;&#125;</span>
-<span class="hljs-comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span>
-<span class="hljs-comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span>
-<span class="hljs-comment"> * &#125;</span>
-<span class="hljs-comment"> */</span>
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;
-    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">insertionSortList</span><span class="hljs-params">(ListNode head)</span> &#123;
-        <span class="hljs-comment">//base case:</span>
-        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> head;
-       <span class="hljs-comment">// loop invariants: </span>
-        <span class="hljs-comment">// for each i in [0, n], list before head[i] is sorted, after is not sorted. </span>
-        <span class="hljs-comment">// initialization: i = 1, becasue head[0] is already sorted by itself</span>
-        <span class="hljs-comment">// maintenance: as i++, we need to insert head[i] into it&#x27;s right place.</span>
-        <span class="hljs-comment">// temination condition: when it passes all the elements</span>
-        <span class="hljs-type">ListNode</span> <span class="hljs-variable">local</span> <span class="hljs-operator">=</span> head.next;
-        <span class="hljs-type">int</span> <span class="hljs-variable">localTraverseCount</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-        <span class="hljs-type">ListNode</span> <span class="hljs-variable">localPrev</span> <span class="hljs-operator">=</span> head;
-        <span class="hljs-type">ListNode</span> <span class="hljs-variable">headCopy</span> <span class="hljs-operator">=</span> head;
-        
-        <span class="hljs-keyword">while</span>(local != <span class="hljs-literal">null</span>) &#123;
-             <span class="hljs-comment">// break current node</span>
-              localPrev.next = local.next;
-            <span class="hljs-type">ListNode</span> <span class="hljs-variable">next</span> <span class="hljs-operator">=</span> local.next;
-            
-           <span class="hljs-comment">// if it&#x27;s the smallest </span>
-          <span class="hljs-keyword">if</span> (local.val &lt; headCopy.val) &#123;
-              local.next = headCopy; 
-              headCopy = local;
-          &#125; <span class="hljs-keyword">else</span> &#123;
-               <span class="hljs-comment">// loop through the first part to insert the node </span>
-            <span class="hljs-type">ListNode</span> <span class="hljs-variable">insertTraverse</span> <span class="hljs-operator">=</span> headCopy;
-            <span class="hljs-type">int</span> <span class="hljs-variable">insertTraverseCount</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-                <span class="hljs-comment">//local invariants: insertTraverse.val is smaller than local.val but insertTraverse.next.val is bigger</span>
-                <span class="hljs-keyword">while</span> (insertTraverseCount &lt; localTraverseCount &amp;&amp; insertTraverse.val &lt; local.val &amp;&amp; insertTraverse.next.val &lt; local.val) &#123;
-                  insertTraverse = insertTraverse.next;  
-                    insertTraverseCount++;
-                &#125;
-                <span class="hljs-comment">// termination: it&#x27;s own place, or found a node whose .next.val is bigger</span>
-                <span class="hljs-comment">// insert local after insertTraverse</span>
-                   <span class="hljs-type">ListNode</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> insertTraverse.next; 
-                insertTraverse.next = local;
-                local.next = temp;
-                <span class="hljs-keyword">if</span> (insertTraverseCount == localTraverseCount) &#123;
-                   localPrev = local; 
-                 &#125;
-              &#125; 
-              localTraverseCount++;
-            local = next;
-        &#125;
-        
-        <span class="hljs-keyword">return</span> headCopy;
-    &#125;
-&#125;</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">insertionSortList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="comment">//base case:</span></span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">       <span class="comment">// loop invariants: </span></span><br><span class="line">        <span class="comment">// for each i in [0, n], list before head[i] is sorted, after is not sorted. </span></span><br><span class="line">        <span class="comment">// initialization: i = 1, becasue head[0] is already sorted by itself</span></span><br><span class="line">        <span class="comment">// maintenance: as i++, we need to insert head[i] into it&#x27;s right place.</span></span><br><span class="line">        <span class="comment">// temination condition: when it passes all the elements</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">local</span> <span class="operator">=</span> head.next;</span><br><span class="line">        <span class="type">int</span> <span class="variable">localTraverseCount</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">localPrev</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">headCopy</span> <span class="operator">=</span> head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(local != <span class="literal">null</span>) &#123;</span><br><span class="line">             <span class="comment">// break current node</span></span><br><span class="line">              localPrev.next = local.next;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">next</span> <span class="operator">=</span> local.next;</span><br><span class="line">            </span><br><span class="line">           <span class="comment">// if it&#x27;s the smallest </span></span><br><span class="line">          <span class="keyword">if</span> (local.val &lt; headCopy.val) &#123;</span><br><span class="line">              local.next = headCopy; </span><br><span class="line">              headCopy = local;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               <span class="comment">// loop through the first part to insert the node </span></span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">insertTraverse</span> <span class="operator">=</span> headCopy;</span><br><span class="line">            <span class="type">int</span> <span class="variable">insertTraverseCount</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">                <span class="comment">//local invariants: insertTraverse.val is smaller than local.val but insertTraverse.next.val is bigger</span></span><br><span class="line">                <span class="keyword">while</span> (insertTraverseCount &lt; localTraverseCount &amp;&amp; insertTraverse.val &lt; local.val &amp;&amp; insertTraverse.next.val &lt; local.val) &#123;</span><br><span class="line">                  insertTraverse = insertTraverse.next;  </span><br><span class="line">                    insertTraverseCount++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// termination: it&#x27;s own place, or found a node whose .next.val is bigger</span></span><br><span class="line">                <span class="comment">// insert local after insertTraverse</span></span><br><span class="line">                   <span class="type">ListNode</span> <span class="variable">temp</span> <span class="operator">=</span> insertTraverse.next; </span><br><span class="line">                insertTraverse.next = local;</span><br><span class="line">                local.next = temp;</span><br><span class="line">                <span class="keyword">if</span> (insertTraverseCount == localTraverseCount) &#123;</span><br><span class="line">                   localPrev = local; </span><br><span class="line">                 &#125;</span><br><span class="line">              &#125; </span><br><span class="line">              localTraverseCount++;</span><br><span class="line">            local = next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> headCopy;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>given solutions:</li>
 </ul>
-<pre><code class="hljs java"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">insertionSortList</span><span class="hljs-params">(ListNode head)</span> &#123;
-    <span class="hljs-type">ListNode</span> <span class="hljs-variable">dummy</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ListNode</span>();
-    <span class="hljs-type">ListNode</span> <span class="hljs-variable">curr</span> <span class="hljs-operator">=</span> head;
-
-    <span class="hljs-keyword">while</span> (curr != <span class="hljs-literal">null</span>) &#123;
-        <span class="hljs-comment">// At each iteration, we insert an element into the resulting list.</span>
-        <span class="hljs-type">ListNode</span> <span class="hljs-variable">prev</span> <span class="hljs-operator">=</span> dummy;
-
-        <span class="hljs-comment">// find the position to insert the current node</span>
-        <span class="hljs-keyword">while</span> (prev.next != <span class="hljs-literal">null</span> &amp;&amp; prev.next.val &lt; curr.val) &#123;
-            prev = prev.next;
-        &#125;
-
-        <span class="hljs-type">ListNode</span> <span class="hljs-variable">next</span> <span class="hljs-operator">=</span> curr.next;
-        <span class="hljs-comment">// insert the current node to the new list</span>
-        curr.next = prev.next;
-        prev.next = curr;
-
-        <span class="hljs-comment">// moving on to the next iteration</span>
-        curr = next;
-    &#125;
-
-    <span class="hljs-keyword">return</span> dummy.next;
-&#125;</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">insertionSortList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">dummy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>();</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">curr</span> <span class="operator">=</span> head;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (curr != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// At each iteration, we insert an element into the resulting list.</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">prev</span> <span class="operator">=</span> dummy;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// find the position to insert the current node</span></span><br><span class="line">        <span class="keyword">while</span> (prev.next != <span class="literal">null</span> &amp;&amp; prev.next.val &lt; curr.val) &#123;</span><br><span class="line">            prev = prev.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">next</span> <span class="operator">=</span> curr.next;</span><br><span class="line">        <span class="comment">// insert the current node to the new list</span></span><br><span class="line">        curr.next = prev.next;</span><br><span class="line">        prev.next = curr;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// moving on to the next iteration</span></span><br><span class="line">        curr = next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><em><a target="_blank" rel="noopener" href="https://leetcode.com/problems/insertion-sort-list/">https://leetcode.com/problems/insertion-sort-list/</a></em></p>
-<h1>Selection Sort</h1>
-<h2 id="Keys-3">Keys</h2>
+<h1 id="selection-sort"><a class="markdownIt-Anchor" href="#selection-sort"></a> Selection Sort</h1>
+<h2 id="keys-2"><a class="markdownIt-Anchor" href="#keys-2"></a> Keys</h2>
 <ul>
 <li>for for loop</li>
 <li><code>swap(i, minSoFar)</code></li>
 </ul>
-<h2 id="Examples">Examples</h2>
+<h2 id="examples"><a class="markdownIt-Anchor" href="#examples"></a> Examples</h2>
 <ul>
 <li>sort an array with two stacks</li>
 <li>sort an array with one stack</li>
 </ul>
-<h2 id="Code-2">Code</h2>
-<h3 id="selection-sort">selection sort</h3>
-<pre><code class="hljs java"><span class="hljs-comment">// Selection sort in Java</span>
-
-<span class="hljs-keyword">import</span> java.util.Arrays;
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">SelectionSort</span> &#123;
-  <span class="hljs-keyword">void</span> <span class="hljs-title function_">selectionSort</span><span class="hljs-params">(<span class="hljs-type">int</span> array[])</span> &#123;
-    <span class="hljs-type">int</span> <span class="hljs-variable">size</span> <span class="hljs-operator">=</span> array.length;
-
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">step</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; step &lt; size - <span class="hljs-number">1</span>; step++) &#123;
-      <span class="hljs-type">int</span> <span class="hljs-variable">min_idx</span> <span class="hljs-operator">=</span> step;
-
-      <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> step + <span class="hljs-number">1</span>; i &lt; size; i++) &#123;
-
-        <span class="hljs-comment">// To sort in descending order, change &gt; to &lt; in this line.</span>
-        <span class="hljs-comment">// Select the minimum element in each loop.</span>
-        <span class="hljs-keyword">if</span> (array[i] &lt; array[min_idx]) &#123;
-          min_idx = i;
-        &#125;
-      &#125;
-
-      <span class="hljs-comment">// put min at the correct position</span>
-      swap(array, min_idx, step);
-    &#125;
-  &#125;
-
-  <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(array, x, y)</span> &#123;
-      <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> array[x];
-      array[x] = array[y];
-      array[y] = temp;
-  &#125;
-
-  <span class="hljs-comment">// driver code</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;
-    <span class="hljs-type">int</span>[] data = &#123; <span class="hljs-number">20</span>, <span class="hljs-number">12</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">2</span> &#125;;
-    <span class="hljs-type">SelectionSort</span> <span class="hljs-variable">ss</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SelectionSort</span>();
-    ss.selectionSort(data);
-    System.out.println(<span class="hljs-string">&quot;Sorted Array in Ascending Order: &quot;</span>);
-    System.out.println(Arrays.toString(data));
-  &#125;
-&#125;</code></pre>
-<h3 id="stacks">stacks</h3>
-<pre><code class="hljs java"><span class="hljs-comment">// Java program to sort an</span>
-<span class="hljs-comment">// array using stack</span>
-<span class="hljs-keyword">import</span> java.io.*;
-<span class="hljs-keyword">import</span> java.util.*;
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">GFG</span>
-&#123;
-	<span class="hljs-comment">// This function return the sorted stack</span>
-	<span class="hljs-keyword">static</span> Stack&lt;Integer&gt; <span class="hljs-title function_">sortStack</span><span class="hljs-params">(Stack&lt;Integer&gt; input)</span>
-	&#123;
-		Stack&lt;Integer&gt; tmpStack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>&lt;Integer&gt;();
-	
-		<span class="hljs-keyword">while</span> (!input.empty())
-		&#123;
-			<span class="hljs-comment">// pop out the first element</span>
-			<span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> input.peek();
-			input.pop();
-	
-			<span class="hljs-comment">// while temporary stack is not empty and top of stack is smaller than temp</span>
-			<span class="hljs-keyword">while</span> (!tmpStack.empty() &amp;&amp; tmpStack.peek() &lt; tmp)
-			&#123;
-				<span class="hljs-comment">// pop from temporary stack and push it to the input stack</span>
-				input.push(tmpStack.peek());
-				tmpStack.pop();
-			&#125;
-	
-			<span class="hljs-comment">// push tmp in temporary of stack</span>
-			tmpStack.push(tmp);
-		&#125;
-	
-		<span class="hljs-keyword">return</span> tmpStack;
-	&#125;
-	
-	<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sortArrayUsingStacks</span><span class="hljs-params">(<span class="hljs-type">int</span> []arr, <span class="hljs-type">int</span> n)</span>
-	&#123;
-		<span class="hljs-comment">// push array elements</span>
-		<span class="hljs-comment">// to stack</span>
-		Stack&lt;Integer&gt; input = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>&lt;Integer&gt;();
-		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)
-			input.push(arr[i]);
-	
-		<span class="hljs-comment">// Sort the temporary stack</span>
-		Stack&lt;Integer&gt; tmpStack = sortStack(input);
-	
-		<span class="hljs-comment">// Put stack elements in arr[]</span>
-		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)
-		&#123;
-			arr[i] = tmpStack.peek();
-			tmpStack.pop();
-		&#125;
-	&#125;
-	
-	<span class="hljs-comment">// Driver Code</span>
-	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>
-	&#123;
-		<span class="hljs-type">int</span> []arr = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">5</span>, <span class="hljs-number">15</span>, <span class="hljs-number">45</span>&#125;;
-		<span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> arr.length;
-	
-		sortArrayUsingStacks(arr, n);
-	
-		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)
-			System.out.print(arr[i] + <span class="hljs-string">&quot; &quot;</span>);
-	&#125;
-&#125;</code></pre>
+<h2 id="code-2"><a class="markdownIt-Anchor" href="#code-2"></a> Code</h2>
+<h3 id="selection-sort-2"><a class="markdownIt-Anchor" href="#selection-sort-2"></a> selection sort</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Selection sort in Java</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SelectionSort</span> &#123;</span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">selectionSort</span><span class="params">(<span class="type">int</span> array[])</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> array.length;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">step</span> <span class="operator">=</span> <span class="number">0</span>; step &lt; size - <span class="number">1</span>; step++) &#123;</span><br><span class="line">      <span class="type">int</span> <span class="variable">min_idx</span> <span class="operator">=</span> step;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> step + <span class="number">1</span>; i &lt; size; i++) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// To sort in descending order, change &gt; to &lt; in this line.</span></span><br><span class="line">        <span class="comment">// Select the minimum element in each loop.</span></span><br><span class="line">        <span class="keyword">if</span> (array[i] &lt; array[min_idx]) &#123;</span><br><span class="line">          min_idx = i;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// put min at the correct position</span></span><br><span class="line">      swap(array, min_idx, step);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(array, x, y)</span> &#123;</span><br><span class="line">      <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> array[x];</span><br><span class="line">      array[x] = array[y];</span><br><span class="line">      array[y] = temp;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// driver code</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] data = &#123; <span class="number">20</span>, <span class="number">12</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">2</span> &#125;;</span><br><span class="line">    <span class="type">SelectionSort</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SelectionSort</span>();</span><br><span class="line">    ss.selectionSort(data);</span><br><span class="line">    System.out.println(<span class="string">&quot;Sorted Array in Ascending Order: &quot;</span>);</span><br><span class="line">    System.out.println(Arrays.toString(data));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="stacks"><a class="markdownIt-Anchor" href="#stacks"></a> stacks</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java program to sort an</span></span><br><span class="line"><span class="comment">// array using stack</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GFG</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// This function return the sorted stack</span></span><br><span class="line">	<span class="keyword">static</span> Stack&lt;Integer&gt; <span class="title function_">sortStack</span><span class="params">(Stack&lt;Integer&gt; input)</span></span><br><span class="line">	&#123;</span><br><span class="line">		Stack&lt;Integer&gt; tmpStack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;Integer&gt;();</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">while</span> (!input.empty())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">// pop out the first element</span></span><br><span class="line">			<span class="type">int</span> <span class="variable">tmp</span> <span class="operator">=</span> input.peek();</span><br><span class="line">			input.pop();</span><br><span class="line">	</span><br><span class="line">			<span class="comment">// while temporary stack is not empty and top of stack is smaller than temp</span></span><br><span class="line">			<span class="keyword">while</span> (!tmpStack.empty() &amp;&amp; tmpStack.peek() &lt; tmp)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">// pop from temporary stack and push it to the input stack</span></span><br><span class="line">				input.push(tmpStack.peek());</span><br><span class="line">				tmpStack.pop();</span><br><span class="line">			&#125;</span><br><span class="line">	</span><br><span class="line">			<span class="comment">// push tmp in temporary of stack</span></span><br><span class="line">			tmpStack.push(tmp);</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">return</span> tmpStack;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">sortArrayUsingStacks</span><span class="params">(<span class="type">int</span> []arr, <span class="type">int</span> n)</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// push array elements</span></span><br><span class="line">		<span class="comment">// to stack</span></span><br><span class="line">		Stack&lt;Integer&gt; input = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;Integer&gt;();</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">			input.push(arr[i]);</span><br><span class="line">	</span><br><span class="line">		<span class="comment">// Sort the temporary stack</span></span><br><span class="line">		Stack&lt;Integer&gt; tmpStack = sortStack(input);</span><br><span class="line">	</span><br><span class="line">		<span class="comment">// Put stack elements in arr[]</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			arr[i] = tmpStack.peek();</span><br><span class="line">			tmpStack.pop();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// Driver Code</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> []arr = &#123;<span class="number">10</span>, <span class="number">5</span>, <span class="number">15</span>, <span class="number">45</span>&#125;;</span><br><span class="line">		<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line">	</span><br><span class="line">		sortArrayUsingStacks(arr, n);</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">			System.out.print(arr[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><em><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/sorting-array-using-stacks/">https://www.geeksforgeeks.org/sorting-array-using-stacks/</a></em></p>
-<h1>Merge Sort</h1>
-<p><img src="/2022/03/06/Sorting/Merge-Sort-Tutorial.png" alt="Merge Sort"></p>
-<h2 id="Keys-4">Keys</h2>
+<h1 id="merge-sort"><a class="markdownIt-Anchor" href="#merge-sort"></a> Merge Sort</h1>
+<p><img src="/2022/03/06/Sorting/Merge-Sort-Tutorial.png" alt="Merge Sort" /></p>
+<h2 id="keys-3"><a class="markdownIt-Anchor" href="#keys-3"></a> Keys</h2>
 <ul>
 <li>Divide and conquer</li>
 <li>Divide, Conquer, Combine</li>
 </ul>
-<h2 id="Psudo-code">Psudo code</h2>
-<pre><code class="hljs plaintext">MergeSort(A, p, r)
-if p &lt; r
-    q = [p + r] / 2
-    MergeSort(A, p, q)
-    MergeSort(A, q + 1, r)
-    Merge(A, p, q, r)
-
-Merge(A, p, q, r)</code></pre>
-<h2 id="Code-3">Code</h2>
-<pre><code class="hljs java"><span class="hljs-comment">/* Java program for Merge Sort */</span>
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">MergeSort</span>
-&#123;
-	<span class="hljs-comment">// Merges two subarrays of arr[].</span>
-	<span class="hljs-comment">// First subarray is arr[l..m]</span>
-	<span class="hljs-comment">// Second subarray is arr[m+1..r]</span>
-	<span class="hljs-keyword">void</span> <span class="hljs-title function_">merge</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[], <span class="hljs-type">int</span> l, <span class="hljs-type">int</span> m, <span class="hljs-type">int</span> r)</span>
-	&#123;
-		<span class="hljs-comment">// Find sizes of two subarrays to be merged</span>
-		<span class="hljs-type">int</span> <span class="hljs-variable">n1</span> <span class="hljs-operator">=</span> m - l + <span class="hljs-number">1</span>;
-		<span class="hljs-type">int</span> <span class="hljs-variable">n2</span> <span class="hljs-operator">=</span> r - m;
-
-		<span class="hljs-comment">/* Create temp arrays */</span>
-		<span class="hljs-type">int</span> L[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n1];
-		<span class="hljs-type">int</span> R[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n2];
-
-		<span class="hljs-comment">/*Copy data to temp arrays*/</span>
-		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n1; ++i)
-			L[i] = arr[l + i];
-		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n2; ++j)
-			R[j] = arr[m + <span class="hljs-number">1</span> + j];
-
-		<span class="hljs-comment">/* Merge the temp arrays */</span>
-
-		<span class="hljs-comment">// Initial indexes of first and second subarrays</span>
-		<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;
-
-		<span class="hljs-comment">// Initial index of merged subarray array</span>
-		<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> l;
-		<span class="hljs-keyword">while</span> (i &lt; n1 &amp;&amp; j &lt; n2) &#123;
-			<span class="hljs-keyword">if</span> (L[i] &lt;= R[j]) &#123;
-				arr[k] = L[i];
-				i++;
-			&#125;
-			<span class="hljs-keyword">else</span> &#123;
-				arr[k] = R[j];
-				j++;
-			&#125;
-			k++;
-		&#125;
-
-		<span class="hljs-comment">/* Copy remaining elements of L[] if any */</span>
-		<span class="hljs-keyword">while</span> (i &lt; n1) &#123;
-			arr[k] = L[i];
-			i++;
-			k++;
-		&#125;
-
-		<span class="hljs-comment">/* Copy remaining elements of R[] if any */</span>
-		<span class="hljs-keyword">while</span> (j &lt; n2) &#123;
-			arr[k] = R[j];
-			j++;
-			k++;
-		&#125;
-	&#125;
-
-	<span class="hljs-comment">// Main function that sorts arr[l..r] using</span>
-	<span class="hljs-comment">// merge()</span>
-	<span class="hljs-keyword">void</span> <span class="hljs-title function_">sort</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[], <span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span>
-	&#123;
-		<span class="hljs-keyword">if</span> (l &lt; r) &#123;
-			<span class="hljs-comment">// Find the middle point</span>
-			<span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span>l+ (r-l)/<span class="hljs-number">2</span>;
-
-			<span class="hljs-comment">// Sort first and second halves</span>
-			sort(arr, l, m);
-			sort(arr, m + <span class="hljs-number">1</span>, r);
-
-			<span class="hljs-comment">// Merge the sorted halves</span>
-			merge(arr, l, m, r);
-		&#125;
-	&#125;
-
-	<span class="hljs-comment">/* A utility function to print array of size n */</span>
-	<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printArray</span><span class="hljs-params">(<span class="hljs-type">int</span> arr[])</span>
-	&#123;
-		<span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> arr.length;
-		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i)
-			System.out.print(arr[i] + <span class="hljs-string">&quot; &quot;</span>);
-		System.out.println();
-	&#125;
-
-	<span class="hljs-comment">// Driver code</span>
-	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>
-	&#123;
-		<span class="hljs-type">int</span> arr[] = &#123; <span class="hljs-number">12</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span> &#125;;
-
-		System.out.println(<span class="hljs-string">&quot;Given Array&quot;</span>);
-		printArray(arr);
-
-		<span class="hljs-type">MergeSort</span> <span class="hljs-variable">ob</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MergeSort</span>();
-		ob.sort(arr, <span class="hljs-number">0</span>, arr.length - <span class="hljs-number">1</span>);
-
-		System.out.println(<span class="hljs-string">&quot;\nSorted array&quot;</span>);
-		printArray(arr);
-	&#125;
-&#125;
-</code></pre>
+<h2 id="psudo-code"><a class="markdownIt-Anchor" href="#psudo-code"></a> Psudo code</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A, p, r)</span><br><span class="line">if p &lt; r</span><br><span class="line">    q = [p + r] / 2</span><br><span class="line">    MergeSort(A, p, q)</span><br><span class="line">    MergeSort(A, q + 1, r)</span><br><span class="line">    Merge(A, p, q, r)</span><br><span class="line"></span><br><span class="line">Merge(A, p, q, r)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<h2 id="code-3"><a class="markdownIt-Anchor" href="#code-3"></a> Code</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Java program for Merge Sort */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MergeSort</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// Merges two subarrays of arr[].</span></span><br><span class="line">	<span class="comment">// First subarray is arr[l..m]</span></span><br><span class="line">	<span class="comment">// Second subarray is arr[m+1..r]</span></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> l, <span class="type">int</span> m, <span class="type">int</span> r)</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// Find sizes of two subarrays to be merged</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">n1</span> <span class="operator">=</span> m - l + <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> <span class="variable">n2</span> <span class="operator">=</span> r - m;</span><br><span class="line"></span><br><span class="line">		<span class="comment">/* Create temp arrays */</span></span><br><span class="line">		<span class="type">int</span> L[] = <span class="keyword">new</span> <span class="title class_">int</span>[n1];</span><br><span class="line">		<span class="type">int</span> R[] = <span class="keyword">new</span> <span class="title class_">int</span>[n2];</span><br><span class="line"></span><br><span class="line">		<span class="comment">/*Copy data to temp arrays*/</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n1; ++i)</span><br><span class="line">			L[i] = arr[l + i];</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n2; ++j)</span><br><span class="line">			R[j] = arr[m + <span class="number">1</span> + j];</span><br><span class="line"></span><br><span class="line">		<span class="comment">/* Merge the temp arrays */</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// Initial indexes of first and second subarrays</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Initial index of merged subarray array</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> l;</span><br><span class="line">		<span class="keyword">while</span> (i &lt; n1 &amp;&amp; j &lt; n2) &#123;</span><br><span class="line">			<span class="keyword">if</span> (L[i] &lt;= R[j]) &#123;</span><br><span class="line">				arr[k] = L[i];</span><br><span class="line">				i++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				arr[k] = R[j];</span><br><span class="line">				j++;</span><br><span class="line">			&#125;</span><br><span class="line">			k++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">/* Copy remaining elements of L[] if any */</span></span><br><span class="line">		<span class="keyword">while</span> (i &lt; n1) &#123;</span><br><span class="line">			arr[k] = L[i];</span><br><span class="line">			i++;</span><br><span class="line">			k++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">/* Copy remaining elements of R[] if any */</span></span><br><span class="line">		<span class="keyword">while</span> (j &lt; n2) &#123;</span><br><span class="line">			arr[k] = R[j];</span><br><span class="line">			j++;</span><br><span class="line">			k++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Main function that sorts arr[l..r] using</span></span><br><span class="line">	<span class="comment">// merge()</span></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">			<span class="comment">// Find the middle point</span></span><br><span class="line">			<span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span>l+ (r-l)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Sort first and second halves</span></span><br><span class="line">			sort(arr, l, m);</span><br><span class="line">			sort(arr, m + <span class="number">1</span>, r);</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Merge the sorted halves</span></span><br><span class="line">			merge(arr, l, m, r);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* A utility function to print array of size n */</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span> arr[])</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">			System.out.print(arr[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Driver code</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> arr[] = &#123; <span class="number">12</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> &#125;;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">&quot;Given Array&quot;</span>);</span><br><span class="line">		printArray(arr);</span><br><span class="line"></span><br><span class="line">		<span class="type">MergeSort</span> <span class="variable">ob</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MergeSort</span>();</span><br><span class="line">		ob.sort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">&quot;\nSorted array&quot;</span>);</span><br><span class="line">		printArray(arr);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><em><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/merge-sort/">https://www.geeksforgeeks.org/merge-sort/</a></em></p>
 <p>Merge Two sorted arrays, in place.</p>
 <p>Keys:</p>
@@ -790,72 +426,23 @@ Merge(A, p, q, r)</code></pre>
 <li>my first thought was moving all the elements of nums1 to the end and go from left. it works too, but there’s more to write.</li>
 <li>how to write the condition is worth memorizing</li>
 </ul>
-<pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">merge</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span> m, <span class="hljs-type">int</span>[] nums2, <span class="hljs-type">int</span> n)</span> &#123;
-    <span class="hljs-type">int</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> m - <span class="hljs-number">1</span>;
-    <span class="hljs-type">int</span> <span class="hljs-variable">q</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">1</span>;
-    
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> m + n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;
-        <span class="hljs-comment">// positive condition: when will we need to </span>
-        <span class="hljs-comment">// swap with nums1</span>
-        <span class="hljs-comment">// 1. when nums1 still has elements and nums2 is out</span>
-        <span class="hljs-comment">// 2. when nums1 still has elements and nums1[p] &gt; nums2[q]</span>
-        <span class="hljs-comment">// notes: it&#x27;s &quot;&gt;&quot; because we go from right to left. </span>
-        <span class="hljs-keyword">if</span> (p &gt;= <span class="hljs-number">0</span> &amp;&amp; (q &lt; <span class="hljs-number">0</span> || (nums1[p] &gt; nums2[q]))) &#123;
-            nums1[i] = nums1[p--];
-            <span class="hljs-keyword">continue</span>;
-        &#125;
-        nums1[i] = nums2[q--];
-    &#125;
-&#125;</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span>[] nums1, <span class="type">int</span> m, <span class="type">int</span>[] nums2, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">p</span> <span class="operator">=</span> m - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">q</span> <span class="operator">=</span> n - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> m + n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="comment">// positive condition: when will we need to </span></span><br><span class="line">        <span class="comment">// swap with nums1</span></span><br><span class="line">        <span class="comment">// 1. when nums1 still has elements and nums2 is out</span></span><br><span class="line">        <span class="comment">// 2. when nums1 still has elements and nums1[p] &gt; nums2[q]</span></span><br><span class="line">        <span class="comment">// notes: it&#x27;s &quot;&gt;&quot; because we go from right to left. </span></span><br><span class="line">        <span class="keyword">if</span> (p &gt;= <span class="number">0</span> &amp;&amp; (q &lt; <span class="number">0</span> || (nums1[p] &gt; nums2[q]))) &#123;</span><br><span class="line">            nums1[i] = nums1[p--];</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        nums1[i] = nums2[q--];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><em><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-sorted-array/">https://leetcode.com/problems/merge-sorted-array/</a></em></p>
-<h1>Heapsort</h1>
+<h1 id="heapsort"><a class="markdownIt-Anchor" href="#heapsort"></a> Heapsort</h1>
 <p>Keys:</p>
 <ul>
 <li>heapify the whole array</li>
 <li>keep swapping with the largest element</li>
 </ul>
-<p>Can be used to implement a priority queue<br>
+<p>Can be used to implement a priority queue<br />
 Time Complexity: O(nlog(n))</p>
-<h1>Quick Sort</h1>
-<h2 id="Psudo">Psudo</h2>
+<h1 id="quick-sort"><a class="markdownIt-Anchor" href="#quick-sort"></a> Quick Sort</h1>
+<h2 id="psudo"><a class="markdownIt-Anchor" href="#psudo"></a> Psudo</h2>
 <details> 
     <summary>Psudo</summary>
-<pre><code class="hljs plaintext">PARTITION(A, p, r) 
- x = A[r]
- i = p - 1
- for j = p to r - 1
-    if (A[j] &lt;= x)
-        i = i + 1
-        swap(A[i], A[j])
- swap(A[r], A[i+1])
- return i+1;
-
-//--------Normal quicksort--------
-QUICKSORT(A, p, r)
- if p &lt; r 
-    q = PARTATION(A, p, r)
-    QUICKSORT(A, p, q -1) 
-    QUICKSORT(A, q + 1, r) 
-
-//--------Tail quicksort--------
-TAIL-RECURSIVE-QUICKSORT(A, p, r)
- while(p &lt; r) 
-    q = PARTITION(A, p, r)
-    TAIL-RECURSIVE-QUICKSORT(A, p, q - 1)
-    p = q + 1
-
-//--------Tail quicksort with logn most depth:sub-call on the smaller half--------
-TAIL-RECURSIVE-QUICKSORT(A, p, r)
- while(p &lt; r) 
-    q = PARTITION(A, p, r)
-    if (p - q &gt; r - p) 
-      TAIL-RECURSIVE-QUICKSORT(A, p, q - 1)
-      p = q + 1
-    else
-      TAIL-RECURSIVE-QUICKSORT(A, q + 1, r)
-      r = q - 1</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">PARTITION(A, p, r) </span><br><span class="line"> x = A[r]</span><br><span class="line"> i = p - 1</span><br><span class="line"> for j = p to r - 1</span><br><span class="line">    if (A[j] &lt;= x)</span><br><span class="line">        i = i + 1</span><br><span class="line">        swap(A[i], A[j])</span><br><span class="line"> swap(A[r], A[i+1])</span><br><span class="line"> return i+1;</span><br><span class="line"></span><br><span class="line">//--------Normal quicksort--------</span><br><span class="line">QUICKSORT(A, p, r)</span><br><span class="line"> if p &lt; r </span><br><span class="line">    q = PARTATION(A, p, r)</span><br><span class="line">    QUICKSORT(A, p, q -1) </span><br><span class="line">    QUICKSORT(A, q + 1, r) </span><br><span class="line"></span><br><span class="line">//--------Tail quicksort--------</span><br><span class="line">TAIL-RECURSIVE-QUICKSORT(A, p, r)</span><br><span class="line"> while(p &lt; r) </span><br><span class="line">    q = PARTITION(A, p, r)</span><br><span class="line">    TAIL-RECURSIVE-QUICKSORT(A, p, q - 1)</span><br><span class="line">    p = q + 1</span><br><span class="line"></span><br><span class="line">//--------Tail quicksort with logn most depth:sub-call on the smaller half--------</span><br><span class="line">TAIL-RECURSIVE-QUICKSORT(A, p, r)</span><br><span class="line"> while(p &lt; r) </span><br><span class="line">    q = PARTITION(A, p, r)</span><br><span class="line">    if (p - q &gt; r - p) </span><br><span class="line">      TAIL-RECURSIVE-QUICKSORT(A, p, q - 1)</span><br><span class="line">      p = q + 1</span><br><span class="line">    else</span><br><span class="line">      TAIL-RECURSIVE-QUICKSORT(A, q + 1, r)</span><br><span class="line">      r = q - 1</span><br></pre></td></tr></table></figure>
 </details>
-<h2 id="Sorting-related-problems">Sorting related problems</h2>
+<h2 id="sorting-related-problems"><a class="markdownIt-Anchor" href="#sorting-related-problems"></a> Sorting related problems</h2>
 <p>Merge Intervals</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-intervals/">https://leetcode.com/problems/merge-intervals/</a></li>
@@ -869,61 +456,7 @@ TAIL-RECURSIVE-QUICKSORT(A, p, r)
   <summary> My attempt</summary>
 </li>
 </ul>
-<pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;
-    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] merge(<span class="hljs-type">int</span>[][] intervals) &#123;
-        <span class="hljs-comment">// sort intervals based on the start time</span>
-        <span class="hljs-comment">// quick sort it</span>
-        quicksort(intervals, <span class="hljs-number">0</span>, intervals.length - <span class="hljs-number">1</span>);
-        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span>[] interval : intervals) &#123;
-          System.out.println(interval[<span class="hljs-number">0</span>] + <span class="hljs-string">&quot; &quot;</span> + interval[<span class="hljs-number">1</span>]);
-        &#125;
-        Stack&lt;<span class="hljs-type">int</span>[]&gt; stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>();
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] interval: intervals) &#123;
-            <span class="hljs-keyword">if</span> (stack.isEmpty() || interval[<span class="hljs-number">0</span>] &gt; stack.peek()[<span class="hljs-number">1</span>]) &#123;
-                stack.push(interval);
-            &#125; <span class="hljs-keyword">else</span> &#123;
-               stack.peek()[<span class="hljs-number">1</span>] = Math.max(interval[<span class="hljs-number">1</span>],stack.peek()[<span class="hljs-number">1</span>]); 
-            &#125;
-        &#125;
-        <span class="hljs-type">int</span>[][] ret = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[stack.size()][<span class="hljs-number">2</span>];
-        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> stack.size() - <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">while</span>(!stack.isEmpty()) &#123;
-            ret[i--] = stack.pop();
-        &#125;
-       <span class="hljs-keyword">return</span> ret; 
-    &#125;
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quicksort</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] intervals, <span class="hljs-type">int</span> q, <span class="hljs-type">int</span> r)</span> &#123;
-       <span class="hljs-keyword">while</span> (q &lt; r)  &#123;
-           <span class="hljs-type">int</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> partition(intervals, q, r);
-           <span class="hljs-keyword">if</span> (q - p &lt; r - p) &#123;
-             quicksort(intervals, q, p - <span class="hljs-number">1</span>);
-             q = p + <span class="hljs-number">1</span>;
-           &#125; <span class="hljs-keyword">else</span> &#123;
-             quicksort(intervals, p + <span class="hljs-number">1</span>, r);
-             r = p - <span class="hljs-number">1</span>;
-           &#125;
-       &#125;
-    &#125;
-    
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-title function_">partition</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] intervals, <span class="hljs-type">int</span> q, <span class="hljs-type">int</span> r)</span> &#123;
-       <span class="hljs-type">int</span>[] pi = intervals[r];
-       <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> q - <span class="hljs-number">1</span>; 
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> q; j &lt; r; j++) &#123;
-            <span class="hljs-keyword">if</span> (intervals[j][<span class="hljs-number">0</span>] &lt;= pi[<span class="hljs-number">0</span>]) &#123;
-                i++;
-                swap(intervals, i, j);
-            &#125;
-        &#125;
-        swap(intervals, i + <span class="hljs-number">1</span>, r);
-        <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;
-    &#125;
-    
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] intervals, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;
-        <span class="hljs-type">int</span>[] temp = intervals[i];
-        intervals[i] = intervals[j];
-        intervals[j] = temp;
-    &#125;
-&#125;</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] merge(<span class="type">int</span>[][] intervals) &#123;</span><br><span class="line">        <span class="comment">// sort intervals based on the start time</span></span><br><span class="line">        <span class="comment">// quick sort it</span></span><br><span class="line">        quicksort(intervals, <span class="number">0</span>, intervals.length - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span>[] interval : intervals) &#123;</span><br><span class="line">          System.out.println(interval[<span class="number">0</span>] + <span class="string">&quot; &quot;</span> + interval[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        Stack&lt;<span class="type">int</span>[]&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] interval: intervals) &#123;</span><br><span class="line">            <span class="keyword">if</span> (stack.isEmpty() || interval[<span class="number">0</span>] &gt; stack.peek()[<span class="number">1</span>]) &#123;</span><br><span class="line">                stack.push(interval);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               stack.peek()[<span class="number">1</span>] = Math.max(interval[<span class="number">1</span>],stack.peek()[<span class="number">1</span>]); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span>[][] ret = <span class="keyword">new</span> <span class="title class_">int</span>[stack.size()][<span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> stack.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(!stack.isEmpty()) &#123;</span><br><span class="line">            ret[i--] = stack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">       <span class="keyword">return</span> ret; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">quicksort</span><span class="params">(<span class="type">int</span>[][] intervals, <span class="type">int</span> q, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">       <span class="keyword">while</span> (q &lt; r)  &#123;</span><br><span class="line">           <span class="type">int</span> <span class="variable">p</span> <span class="operator">=</span> partition(intervals, q, r);</span><br><span class="line">           <span class="keyword">if</span> (q - p &lt; r - p) &#123;</span><br><span class="line">             quicksort(intervals, q, p - <span class="number">1</span>);</span><br><span class="line">             q = p + <span class="number">1</span>;</span><br><span class="line">           &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             quicksort(intervals, p + <span class="number">1</span>, r);</span><br><span class="line">             r = p - <span class="number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span>[][] intervals, <span class="type">int</span> q, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">       <span class="type">int</span>[] pi = intervals[r];</span><br><span class="line">       <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> q - <span class="number">1</span>; </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> q; j &lt; r; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (intervals[j][<span class="number">0</span>] &lt;= pi[<span class="number">0</span>]) &#123;</span><br><span class="line">                i++;</span><br><span class="line">                swap(intervals, i, j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(intervals, i + <span class="number">1</span>, r);</span><br><span class="line">        <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span>[][] intervals, <span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] temp = intervals[i];</span><br><span class="line">        intervals[i] = intervals[j];</span><br><span class="line">        intervals[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
    </details>  
 
       
