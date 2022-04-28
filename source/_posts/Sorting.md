@@ -8,6 +8,7 @@ tags:
     - sorting
 categories:
     - algorithms
+----
 
 # Insertion Sort
 
