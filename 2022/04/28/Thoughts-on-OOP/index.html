@@ -17,20 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Binary Search | Hexo</title>
-  <meta name="description" content="Concepts Key  get rid of a side that’s not what we are looking for whether you can git rid of the border depending on if the border might be the final answer use the smallest sample size(size &#x3D; 1) to">
+  <title>Thoughts on OOD | Hexo</title>
+  <meta name="description" content="How to approach OOP interview questions I was at a friend’s place three days ago, and we were talking uncertain OOP technical interviews are. Then we sat down and went through an OOP problem and concl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Binary Search">
-<meta property="og:url" content="http://example.com/2022/03/06/Binary-Search/index.html">
+<meta property="og:title" content="Thoughts on OOD">
+<meta property="og:url" content="http://example.com/2022/04/28/Thoughts-on-OOP/index.html">
 <meta property="og:site_name" content="Deyi Kong">
-<meta property="og:description" content="Concepts Key  get rid of a side that’s not what we are looking for whether you can git rid of the border depending on if the border might be the final answer use the smallest sample size(size &#x3D; 1) to">
+<meta property="og:description" content="How to approach OOP interview questions I was at a friend’s place three days ago, and we were talking uncertain OOP technical interviews are. Then we sat down and went through an OOP problem and concl">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-06T04:19:39.000Z">
+<meta property="article:published_time" content="2022-04-28T01:13:43.000Z">
 <meta property="article:modified_time" content="2022-04-28T01:26:39.527Z">
 <meta property="article:author" content="Deyi Kong">
+<meta property="article:tag" content="OOP">
+<meta property="article:tag" content="interview">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2022/03/06/Binary-Search/index.html">
+  <link rel="canonical" href="http://example.com/2022/04/28/Thoughts-on-OOP/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Deyi Kong" type="application/atom+xml">
   
@@ -360,14 +362,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Binary-Search" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Thoughts-on-OOP" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Binary Search
+      Thoughts on OOD
     </h1>
   
 
@@ -375,16 +377,21 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/03/06/Binary-Search/" class="article-date">
-	  <time datetime="2022-03-06T04:19:39.000Z" itemprop="datePublished">2022-03-05</time>
+	<a href="/2022/04/28/Thoughts-on-OOP/" class="article-date">
+	  <time datetime="2022-04-28T01:13:43.000Z" itemprop="datePublished">2022-04-27</time>
 	</a>
 </span>
         
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/OOP/" rel="tag">OOP</a>, <a class="article-tag-link-link" href="/tags/interview/" rel="tag">interview</a>
+  </span>
+
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/06/Binary-Search/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/28/Thoughts-on-OOP/#comments" class="article-comment-link">Comments</a></span>
         
 	
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 167(words)</span>
@@ -397,40 +404,21 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="Concepts">Concepts</h2>
-<h2 id="Key">Key</h2>
+        <h2 id="How-to-approach-OOP-interview-questions">How to approach OOP interview questions</h2>
+<p>I was at a friend’s place three days ago, and we were talking uncertain OOP technical interviews are.</p>
+<p>Then we sat down and went through an OOP problem and conclude the following three steps to offer ideas to approach OOP interviews.</p>
+<ol>
+<li>outline (bottom up): write all the classes/components from small scope to big scope</li>
+<li>implementation (top down): write all method signatures from big scope to small scope.</li>
+</ol>
 <ul>
-<li>get rid of a side that’s not what we are looking for</li>
-<li>whether you can git rid of the border depending on if the border might be the final answer</li>
-<li>use the smallest sample size(size = 1) to test if the condition allows entering the while loop, and test if the condition allows exiting the loop</li>
+<li>for the biggest class, start with the constructor, properties and then methods from the requirements(use cases, properties).</li>
+<li>for the smaller classes, requirements are from their upper classes’ implementation details + initial requirements(use cases, properties).</li>
 </ul>
-<h2 id="Questions">Questions</h2>
-<ul>
-<li>closet to a target number(stop at two elements)</li>
-<li>kth closet to a target number
-<ul>
-<li>find the closest, then traverse left or right</li>
-</ul>
-</li>
-<li>find the first occurrence of a number
-<ul>
-<li>1,2,2,2 find 2;</li>
-<li>stop at two elements</li>
-<li>don’t stop at the target, keep moving the left: <code>l = m</code>, not <code>m - 1</code> because can’t get rid of m</li>
-</ul>
-</li>
-<li>sorted array of unknown size
-<ul>
-<li>double the range to find the end index first</li>
-<li>then try to find it in the found range</li>
-</ul>
-</li>
-<li>maximum profit in job scheduling(hard): <a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-profit-in-job-scheduling/">https://leetcode.com/problems/maximum-profit-in-job-scheduling/</a>
-<ul>
-<li>dp + binary search. top down + bottom up.</li>
-</ul>
-</li>
-</ul>
+<ol start="3">
+<li>changes (bottom up): if there’s any structural changes(deletion, addition, modification) on a particular part of the code, trace all places that used these changed part bottom up.</li>
+</ol>
+<p>Overall programming habit, BFS: don’t program too deep when there’s a thought, just go down 1 step down and just write the signature and keep writing.</p>
 
       
     </div>
@@ -440,7 +428,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>Link to this post：</strong>
-      <a href="http://example.com/2022/03/06/Binary-Search/" title="Binary Search" target="_blank" rel="external">http://example.com/2022/03/06/Binary-Search/</a>
+      <a href="http://example.com/2022/04/28/Thoughts-on-OOP/" title="Thoughts on OOD" target="_blank" rel="external">http://example.com/2022/04/28/Thoughts-on-OOP/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -488,13 +476,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/03/06/Sum/" title="Sum"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/03/06/Fundamental/" title="Fundamental"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/04/21/Kth-Biggest/" title="Kth Biggest"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -583,9 +567,9 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
     <script defer>
     var disqus_config = function () {
         
-            this.page.url = 'http://example.com/2022/03/06/Binary-Search/';
+            this.page.url = 'http://example.com/2022/04/28/Thoughts-on-OOP/';
         
-        this.page.identifier = 'Binary-Search';
+        this.page.identifier = 'Thoughts-on-OOP';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
