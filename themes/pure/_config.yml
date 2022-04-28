@@ -237,17 +237,29 @@ profile:
     link_tooltip: true # enable the social link tooltip, options: true, false
   # My Skills
   skills:
-    Git: ★★★☆☆
-    Gulp: ★★★☆☆
+    C#: ★★★★★
+    Java: ★★★★☆
+    PHP: ★★★★☆
+    Git: ★★★★☆
     Javascript: ★★★☆☆
-    HTML+CSS: ★★★☆☆
-    Bootstrap: ★★★☆☆
-    ThinkPHP: ★★★☆☆
-    平面设计: ★★★☆☆
+    HTML+CSS: ★★★★☆
+    Laravel: ★★★★★
+    ASP.net MVC: ★★★★☆
+    Mysql: ★★★★☆
+    Postgres: ★★★★☆
+    MongoDB: ★★★☆☆
+    Redis: ★★★★☆
+    Vue.js: ★★★★★
+    GCP: ★★★★☆
+    AWS: ★★★☆☆
+    Vim: ★★★☆☆
+    Docker: ★★★★☆
   # My Personal Links
   links:
     Github: https://github.com/deyikong
-    Blog: http://deyikong.github.io
+    Blog(This site): https://deyikong.github.io
+    LinkedIn: https://www.linkedin.com/in/deyikong/
+    Facebook: https://www.facebook.com/deyi.kong.awesome
   #    微博: http://weibo.com/cofess
   #    花瓣: http://huaban.com/cofess
   #    Behance: https://www.behance.net/cofess
@@ -261,9 +273,12 @@ profile:
     - Software Engineer
   # My Personal Works
   works:
-    name:
-      link: https://deyikong.github.io
+    99huaren:
+      link: https://www.99huaren.com
       date: 2021
+    mortgage-comparison.org:
+      link: https://mortgage-comparison.org
+      date: 2020
   # My Personal Projects
 #  projects:
 #    cofess/gulp-startpro: https://github.com/cofess/gulp-startpro
