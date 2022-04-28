@@ -119,17 +119,17 @@ repository:
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 comment:
-  type: gitalk  # 启用哪种评论系统
+  type: gitment  # 启用哪种评论系统
   disqus:  # enter disqus shortname here
   youyan:
     uid: 1783844 # enter youyan uid
   livere:
     uid: # enter youyan uid
   gitment:
-    githubID:
-    repo:
-    ClientID:
-    ClientSecret:
+    githubID: deyikong
+    repo: https://github.com/deyikong/blog-comments/
+    ClientID: b8949f3ac4682bc1ec59
+    ClientSecret: 3032f55478aef3f5164f768b4068ac3bd65483c5
     lazy: false
   gitalk: # gitalk. https://gitalk.github.io/
     owner:  deyikong #必须. GitHub repository 所有者，可以是个人或者组织。
