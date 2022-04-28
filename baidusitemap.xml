@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://deyikong.github.io/2022/03/06/Sorting/</loc>
-    <lastmod>2022-04-28</lastmod>
-  </url>
-  <url>
-    <loc>https://deyikong.github.io/2022/03/06/Sum/</loc>
-    <lastmod>2022-04-28</lastmod>
-  </url>
-  <url>
-    <loc>https://deyikong.github.io/2022/04/28/Thoughts-on-OOP/</loc>
-    <lastmod>2022-04-28</lastmod>
-  </url>
-  <url>
-    <loc>https://deyikong.github.io/2022/04/03/Trie/</loc>
-    <lastmod>2022-04-28</lastmod>
-  </url>
-  <url>
-    <loc>https://deyikong.github.io/2022/03/05/start/</loc>
-    <lastmod>2022-04-28</lastmod>
-  </url>
-  <url>
     <loc>https://deyikong.github.io/2022/03/18/Binary-Search-Tree/</loc>
     <lastmod>2022-04-28</lastmod>
   </url>
@@ -38,6 +18,26 @@
   </url>
   <url>
     <loc>https://deyikong.github.io/2022/04/21/Kth-Biggest/</loc>
+    <lastmod>2022-04-28</lastmod>
+  </url>
+  <url>
+    <loc>https://deyikong.github.io/2022/03/06/Sorting/</loc>
+    <lastmod>2022-04-28</lastmod>
+  </url>
+  <url>
+    <loc>https://deyikong.github.io/2022/03/06/Sum/</loc>
+    <lastmod>2022-04-28</lastmod>
+  </url>
+  <url>
+    <loc>https://deyikong.github.io/2022/04/28/Thoughts-on-OOP/</loc>
+    <lastmod>2022-04-28</lastmod>
+  </url>
+  <url>
+    <loc>https://deyikong.github.io/2022/04/03/Trie/</loc>
+    <lastmod>2022-04-28</lastmod>
+  </url>
+  <url>
+    <loc>https://deyikong.github.io/2022/03/05/start/</loc>
     <lastmod>2022-04-28</lastmod>
   </url>
   <url>
