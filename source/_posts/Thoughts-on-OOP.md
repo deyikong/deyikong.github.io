@@ -10,7 +10,7 @@ categories:
     - algorithms
 excerpt: 'Object Oriented Programming Guide'
 photos: 
-    - Thoughts-on-OOP/oop.jpeg
+    - images/oop.jpeg
 
 ---
 
