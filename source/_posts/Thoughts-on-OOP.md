@@ -1,5 +1,5 @@
 ---
-title: Thoughts on OOD
+title: Thoughts on OOP
 date: 2022-04-27 20:13:43
 tags: 
     - OOP
