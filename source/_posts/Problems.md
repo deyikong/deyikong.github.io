@@ -1,7 +1,11 @@
 ---
 title: Problems
 date: 2022-04-05 11:32:04
-tags:
+tags: 
+    - algorithms 
+    - technical
+    - leetcode
+    
 ---
 
 # 04/05/2022

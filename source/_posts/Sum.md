@@ -1,7 +1,7 @@
 ---
 title: Sum
 date: 2022-03-06 01:40:41
-tags:
+tags: sum
 ---
 ## Two Sum
 Keys: 
