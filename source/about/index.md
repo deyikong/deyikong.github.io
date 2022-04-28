@@ -14,16 +14,16 @@ I like to play basketball, talk to people, hike, etc.
 
 This is me.
 <p align="center">
-   <img src="../images/deyi.jpg" width="250px"> <img src="../images/deyi1.jpg" width="250px">
+   <img src="../images/deyi.jpg" width="300px"> <img src="../images/deyi1.jpg" width="300px">
 </p>
 This is my wedding
 <p align="center">
-  <img src="../images/wedding.JPEG" width="500px">
+  <img src="../images/wedding.JPEG" width="600px">
 </p>
 
 Some crafting with family and friends. 
 <p align="center">
-   <img src="../images/ginger-house.jpg" width="250px"> <img src="../images/pumpkin.jpg" width="250px">
+   <img src="../images/ginger-house.jpg" width="300px"> <img src="../images/pumpkin.jpg" width="300px">
 </p>
 
 <style>
