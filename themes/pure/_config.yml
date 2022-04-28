@@ -134,11 +134,11 @@ comment:
   gitalk: # gitalk. https://gitalk.github.io/
     owner:  deyikong #必须. GitHub repository 所有者，可以是个人或者组织。
     admin:  deyikong #必须. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。
-    repo:  github.com:deyikong/blog-comments #必须. GitHub repository.
+    repo: https://github.com/deyikong/blog-comments/ #必须. GitHub repository.
     ClientID: b8949f3ac4682bc1ec59 #必须. GitHub Application Client ID.
     ClientSecret:  3032f55478aef3f5164f768b4068ac3bd65483c5 #必须. GitHub Application Client Secret.
     enableHotKey: true
-    language: zh-CN
+    language: en-US
 
   valine: # Valine. https://valine.js.org
     appid:  # your leancloud application appid
