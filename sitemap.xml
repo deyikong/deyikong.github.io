@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://deyikong.github.io/links/index.html</loc>
+    
+    <lastmod>2022-04-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://deyikong.github.io/repository/index.html</loc>
+    
+    <lastmod>2022-04-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://deyikong.github.io/tags/index.html</loc>
+    
+    <lastmod>2022-04-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://deyikong.github.io/2022/03/18/Binary-Search-Tree/</loc>
     
     <lastmod>2022-04-28</lastmod>
@@ -47,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://deyikong.github.io/2022/04/28/Sorting/</loc>
+    <loc>https://deyikong.github.io/2022/03/06/Sorting/</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -118,33 +145,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://deyikong.github.io/links/index.html</loc>
-    
-    <lastmod>2022-04-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://deyikong.github.io/repository/index.html</loc>
-    
-    <lastmod>2022-04-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://deyikong.github.io/tags/index.html</loc>
-    
-    <lastmod>2022-04-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://deyikong.github.io/</loc>
@@ -205,6 +205,13 @@
   
   <url>
     <loc>https://deyikong.github.io/tags/kth-biggest/</loc>
+    <lastmod>2022-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://deyikong.github.io/tags/sorting/</loc>
     <lastmod>2022-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

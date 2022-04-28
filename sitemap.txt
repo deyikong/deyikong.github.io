@@ -1,9 +1,12 @@
+https://deyikong.github.io/links/index.html
+https://deyikong.github.io/repository/index.html
+https://deyikong.github.io/tags/index.html
 https://deyikong.github.io/2022/03/18/Binary-Search-Tree/
 https://deyikong.github.io/2022/03/06/Binary-Search/
 https://deyikong.github.io/2022/04/12/Bucket-Sort-And-Meeting-Rooms/
 https://deyikong.github.io/2022/03/06/Fundamental/
 https://deyikong.github.io/2022/04/21/Kth-Biggest/
-https://deyikong.github.io/2022/04/28/Sorting/
+https://deyikong.github.io/2022/03/06/Sorting/
 https://deyikong.github.io/2022/03/06/Sum/
 https://deyikong.github.io/2022/04/28/Thoughts-on-OOP/
 https://deyikong.github.io/2022/04/03/Trie/
@@ -11,9 +14,6 @@ https://deyikong.github.io/2022/03/05/start/
 https://deyikong.github.io/2022/04/05/Problems/
 https://deyikong.github.io/about/index.html
 https://deyikong.github.io/categories/index.html
-https://deyikong.github.io/links/index.html
-https://deyikong.github.io/repository/index.html
-https://deyikong.github.io/tags/index.html
 https://deyikong.github.io/
 https://deyikong.github.io/tags/algorithm/
 https://deyikong.github.io/tags/interview/
@@ -23,6 +23,7 @@ https://deyikong.github.io/tags/binary-search/
 https://deyikong.github.io/tags/algorithms/
 https://deyikong.github.io/tags/fundamentals/
 https://deyikong.github.io/tags/kth-biggest/
+https://deyikong.github.io/tags/sorting/
 https://deyikong.github.io/tags/sum/
 https://deyikong.github.io/tags/OOP/
 https://deyikong.github.io/tags/trie/
