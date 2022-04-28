@@ -138,8 +138,8 @@ public void set(int col,Cell cell) {
 
 That's it, if we want to update cells. 
 
-## Third Step: Changes (bottom up)
-### In our current situation, we have `font`, `size` and `bold` in each `Cell`, however, what if we want to select a range of cells and apply the same style to these Cells. so that requires changes in our `Cell` class, so let's create a `Style` class that's shared across more than one Cell. 
+### Third Step: Changes (bottom up)
+#### In our current situation, we have `font`, `size` and `bold` in each `Cell`, however, what if we want to select a range of cells and apply the same style to these Cells. so that requires changes in our `Cell` class, so let's create a `Style` class that's shared across more than one Cell. 
 
 ```java 
 class Cell<T> {

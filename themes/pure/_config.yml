@@ -1,9 +1,9 @@
 # menu
 menu:
   Home: .
-  Archives: archives  # 归档
-  Categories: categories  # 分类
-  Tags: tags  # 标签
+#  Archives: archives  # 归档
+#  Categories: categories  # 分类
+#  Tags: tags  # 标签
 #  Repository: repository  # github repositories
 #  Books: books  # 豆瓣书单
 #  Links: links  # 友链
@@ -21,6 +21,22 @@ menu_icons:
   links: icon-friendship
   about: icon-cup-fill
 
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  quotes: “”‘’
+  plugins:
+    - plugin:
+        name: markdown-it-katex
+        enable: true
+    - plugin:
+        name: markdown-it-mark
+        enable: false
 # rss
 rss: /atom.xml
 
