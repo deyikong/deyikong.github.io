@@ -10,7 +10,7 @@ categories:
     - algorithms
 ---
 
-## How to approach OOP interview questions
+# How to approach OOP interview questions
 
 If you have problems with OOP technical interviews, here are some pointers on how to approach this kind of problems. 
 
@@ -21,14 +21,14 @@ If you have problems with OOP technical interviews, here are some pointers on ho
 3. changes (bottom up): if there's any structural changes(deletion, addition, modification) on a particular part of the code, trace all places that used these changed part bottom up.   
 
 For example, designing an Excel, each cell has it's own styles(font, size, color, etc), each cell can have different types of data(integer, string, boolean, etc), users can append or insert rows or columns
-### First step: outline(bottom up)：
+## First step: outline(bottom up)：
 ``` java 
 class Cell<T> {}
 class Row {}
 class Sheet {}
 ```
-### Second Step: implementation (top down):
-#### start filling the classes from top down
+## Second Step: implementation (top down):
+### start filling the classes from top down
 
 
 Start with the Sheet's constructor and some properties, on first thought, we just need an empty constructor 
@@ -142,8 +142,8 @@ public void set(int col,Cell cell) {
 
 That's it, if we want to update cells. 
 
-### Third Step: Changes (bottom up)
-#### In our current situation, we have `font`, `size` and `bold` in each `Cell`, however, what if we want to select a range of cells and apply the same style to these Cells. so that requires changes in our `Cell` class, so let's create a `Style` class that's shared across more than one Cell. 
+## Third Step: Changes (bottom up)
+### In our current situation, we have `font`, `size` and `bold` in each `Cell`, however, what if we want to select a range of cells and apply the same style to these Cells. so that requires changes in our `Cell` class, so let's create a `Style` class that's shared across more than one Cell. 
 
 ```java 
 class Cell<T> {

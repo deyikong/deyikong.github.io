@@ -6,7 +6,7 @@ menu:
   Tags: tags  # 标签
 #  Repository: repository  # github repositories
 #  Books: books  # 豆瓣书单
-#  Links: links  # 友链
+  Links: links  # 友链
   About: about  # 关于
 
 # Enable/Disable menu icons
@@ -86,8 +86,8 @@ widgets:
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
-# - category
-# - tagcloud
+ - category
+ - tagcloud
 # - archive
 
 # widget behavior
@@ -118,12 +118,12 @@ donate:
 # weibo,qq,qzone,wechat,tencent,douban,diandian,facebook,twitter,google,linkedin
 share:
   enable: true  # 是否启用分享
-  sites: weibo,qq,wechat,facebook,twitter  # PC端显示的分享图标
-  mobile_sites: weibo,qq,qzone  # 移动端显示的分享图标
+  sites: facebook,twitter,weibo,qq,wechat # PC端显示的分享图标
+  mobile_sites: facebook,twitter,wechat,weibo # qq,qzone  # 移动端显示的分享图标
 
 # Github
-github:
-  username: deyikong  # github username
+#github:
+#  username: deyikong  # github username
 
 # Repository Info (This will override 'github' option)
 # 项目仓库信息（将会覆盖 github 项）
