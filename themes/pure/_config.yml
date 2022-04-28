@@ -120,7 +120,7 @@ repository:
 # Introduction: https://imsun.net/posts/gitment-introduction/
 comment:
   type: disqus  # 启用哪种评论系统
-  disqus:  # enter disqus shortname here
+  disqus:  deyi-blog # enter disqus shortname here
   youyan:
     uid: 1783844 # enter youyan uid
   livere:
