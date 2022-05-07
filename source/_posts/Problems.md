@@ -1934,3 +1934,184 @@ class Solution {
     }
 }
 ```
+
+# 4/28/2022
+
+## Course Schedule II
+https://leetcode.com/problems/course-schedule-ii/
+
+### solutions
+- Topological sort methods
+    - dfs with colors (permanent, temporary, and empty), add permanent node only. start with each empty node, and mark each one gray, top down, if a gray is met again, that means there's a cycle. 
+    - indegree, indegree means how many parents/dependencies one node has, only add node whose indegree is 0, that means all the dependencies are process already. decrease each node's indegrees by one when a different node unlocks this node
+    
+```java indegrees
+class Solution {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        int[] indegrees = new int[numCourses];
+        
+        HashMap<Integer, List<Integer>> unlocks = new HashMap();
+        for (int[] pre : prerequisites) {
+            indegrees[pre[0]]++;
+            List<Integer> unlock = unlocks.getOrDefault(pre[1], new ArrayList<Integer>());
+            unlock.add(pre[0]);
+            unlocks.put(pre[1], unlock);
+        }
+        
+        Queue<Integer> q = new LinkedList();
+        int[] ans = new int[numCourses];
+        int k = 0;
+        
+        for (int i = 0; i < numCourses; i++) {
+            if (indegrees[i] == 0) {
+                // this is very smart, because all the ones that don't have dependencies are added to the queue as well. 
+                q.add(i);
+                
+            }
+        }
+        
+        //System.out.println(unlocks);
+        while (!q.isEmpty()) {
+           int size = q.size(); 
+            for (int i = 0; i < size; i++) {
+                int cur = q.poll();
+                ans[k++] = cur; 
+                if (unlocks.containsKey(cur)) {
+                    List<Integer> unlock = unlocks.get(cur);
+                    for (int dependency : unlock) {
+                        if (--indegrees[dependency] == 0) {
+                            q.add(dependency);
+                        }
+                    }
+                }
+            }
+        }
+        if (k == numCourses) {
+            return ans;
+        }
+        return new int[0];
+        
+    }
+}
+```
+
+## Number of Matching Subsequences
+https://leetcode.com/problems/number-of-matching-subsequences/submissions/
+
+### Solutions
+- binary search (my solution)
+    - record all indice for all chars in `s`
+    - for each word's character, check if there exists an char that's behind the previous char's index
+- go through each word in parallel (m being the length of `s`, n being the length of `words`)
+    - brute force O(mn), TLE  
+    - for each char in `s`, create a `HashMap` or `array[26]`, optimised, O(m + num of chars of all words) < O(mn), because m * n - (m + n * l) = mn - m - nl = m(n-1) - nl ~= n(m-l), as long as m is bigger than l, this method is more efficient, which is true. otherwise, most of words longer than l can be eliminated by checking the length diff between l and m in O(1) for each word
+
+```java my binary solution (my solution)
+class Solution {
+    public int numMatchingSubseq(String s, String[] words) {
+        HashMap<Character, List<Integer>> map = new HashMap();
+        
+        for (int i = 0; i < s.length(); i++) {
+            List<Integer> l = map.getOrDefault(s.charAt(i), new ArrayList<Integer>());
+            l.add(i);
+            map.put(s.charAt(i), l);
+        }
+        
+        int ans = 0;
+        for (String word : words) {
+            int idx = -1;
+            int i = 0;
+            for (; i < word.length(); i++) {
+                if (!map.containsKey(word.charAt(i))) break;
+                idx = findIndexToTheRightOf(idx, map.get(word.charAt(i))); 
+                //System.out.println(word.charAt(i) + ": " + idx);
+                if (idx == -1) break;
+            }
+            if (i == word.length()) ans++;
+        }
+        return ans;
+    }
+    private int findIndexToTheRightOf(int idx, List<Integer> list) {
+        if (list.size() == 0 || list.get(list.size() - 1) <= idx) return -1;
+        int left = 0, right = list.size() - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (list.get(mid) <= idx) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            } 
+        }
+        return list.get(left) > idx ? list.get(left) : list.get(right);
+    }
+}
+```
+
+```java parallel with all indices (my solution)
+class Solution {
+    public int numMatchingSubseq(String s, String[] words) {
+        int ans = 0;
+        int[] indice = new int[words.length];
+        List<Integer>[] heads = new ArrayList[26];
+        for (int i = 0; i < 26; i++)
+            heads[i] = new ArrayList<Integer>();
+        
+        for (int i = 0; i < words.length; i++)
+            heads[words[i].charAt(0) - 'a'].add(i);
+        
+        for (char c: s.toCharArray()) {
+            List<Integer> l = heads[c - 'a'];
+            heads[c - 'a'] = new ArrayList<Integer>();
+            for (int i : l) {
+                indice[i]++;
+                if (indice[i] == words[i].length()) {
+                    ans++;
+                } else if (indice[i] < words[i].length()) {
+                    char ch = words[i].charAt(indice[i]);
+                    heads[ch - 'a'].add(i);
+                }
+            }
+        }
+        return ans;
+    }
+}
+```
+```java parallel OOP (given solution)
+class Solution {
+    public int numMatchingSubseq(String S, String[] words) {
+        int ans = 0;
+        ArrayList<Node>[] heads = new ArrayList[26];
+        for (int i = 0; i < 26; ++i)
+            heads[i] = new ArrayList<Node>();
+
+        for (String word: words)
+            heads[word.charAt(0) - 'a'].add(new Node(word, 0));
+
+        for (char c: S.toCharArray()) {
+            ArrayList<Node> old_bucket = heads[c - 'a'];
+            heads[c - 'a'] = new ArrayList<Node>();
+
+            for (Node node: old_bucket) {
+                node.index++;
+                if (node.index == node.word.length()) {
+                    ans++;
+                } else {
+                    heads[node.word.charAt(node.index) - 'a'].add(node);
+                }
+            }
+            old_bucket.clear();
+        }
+        return ans;
+    }
+
+}
+
+class Node {
+    String word;
+    int index;
+    public Node(String w, int i) {
+        word = w;
+        index = i;
+    }
+}
+```

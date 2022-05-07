@@ -10,6 +10,9 @@ categories:
     - algorithms
 ---
 
+### list cases
+when it's a complicated problem, list all the cases you can think of before coding with an example
+
 ###  Loop Invariants
 - *Initialization*: It's true prior to the first iteration of the loop(variable initializations before the loop)
 - *Maintenance*: If it's true before an iteration of the loop, it remains true before the next iteration(logic inside the loop) 
