@@ -5,6 +5,8 @@ tags:
 ---
 
 
+# 扫描线问题 Line Sweep
+
 ## Range Addition
 https://leetcode.com/problems/range-addition/
 ### Solutions
@@ -155,3 +157,21 @@ class Solution {
     }
 }
 ```
+## 252 meeting room
+https://leetcode.com/problems/meeting-rooms/
+## 253 meeting room II
+https://leetcode.com/problems/meeting-rooms-ii/
+## 56 merge interval
+https://leetcode.com/problems/merge-intervals/
+## 1272 Remove interval
+https://leetcode.com/problems/remove-interval/
+## 435 non overlapping intervals
+https://leetcode.com/problems/non-overlapping-intervals/
+## 1288 Remove Covered intervals
+https://leetcode.com/problems/remove-covered-intervals/
+## 1229 Meeting Scheduler
+https://leetcode.com/problems/meeting-scheduler/
+## 986 interval list intersections
+https://leetcode.com/problems/interval-list-intersections/
+## 759 Employee Free Time
+https://leetcode.com/problems/employee-free-time/
