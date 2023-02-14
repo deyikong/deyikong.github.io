@@ -1,6 +1,6 @@
+https://deyikong.github.io/links/index.html
 https://deyikong.github.io/repository/index.html
 https://deyikong.github.io/tags/index.html
-https://deyikong.github.io/links/index.html
 https://deyikong.github.io/2022/03/18/Binary-Search-Tree/
 https://deyikong.github.io/2022/03/06/Binary-Search/
 https://deyikong.github.io/2022/04/12/Bucket-Sort-And-Meeting-Rooms/
