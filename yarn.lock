@@ -687,10 +687,10 @@ hexo-renderer-markdown-it-plus@^1.0.6:
     markdown-it-toc "^1.1.0"
     uslug "^1.0.4"
 
-hexo-renderer-markdown-it@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/hexo-renderer-markdown-it/-/hexo-renderer-markdown-it-7.0.0.tgz#052e6c9dd88f5b8de7e78fef04750da28c4fe568"
-  integrity sha512-X+JDJ+FKGOvgGnJ1UW2AR13Ibltr/80IUbe2xh5u1hyCMKptAAhBHrhvRIqMR4WQuBgKOjQclyx4IHHY8u0n7w==
+hexo-renderer-markdown-it@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/hexo-renderer-markdown-it/-/hexo-renderer-markdown-it-7.1.0.tgz#fb7b982284e0deca88ac9c54440ac38715b2bcba"
+  integrity sha512-CQK7/kvhWbpKzXOSTpSuANVKgOZjPzxkPna4IQ6xMnRqsNpVXNSzpn5Ke1QEVH2x6FJB1/Vf7B40sJVxQKagaw==
   dependencies:
     hexo-util "^3.0.1"
     markdown-it "^13.0.1"
@@ -799,12 +799,7 @@ hexo@^6.3.0:
     titlecase "^1.1.3"
     warehouse "^4.0.2"
 
-highlight.js@^11.0.1, highlight.js@^11.5.1, highlight.js@^11.7.0:
-  version "11.7.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.7.0.tgz#3ff0165bc843f8c9bce1fd89e2fda9143d24b11e"
-  integrity sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==
-
-highlight.js@^11.6.0:
+highlight.js@^11.0.1, highlight.js@^11.5.1, highlight.js@^11.6.0, highlight.js@^11.7.0:
   version "11.7.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.7.0.tgz#3ff0165bc843f8c9bce1fd89e2fda9143d24b11e"
   integrity sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==
