@@ -553,10 +553,10 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-hexo-asset-link@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/hexo-asset-link/-/hexo-asset-link-2.2.1.tgz#2665141a9324f02d20c4612df3b913d6c2cb2159"
-  integrity sha512-YQxqkX+fUmzAjgbiExr1paMtfBuWuMTzhUTma+eruIybdvi9mL90Hz0sYEI8dfTl1JoJbl9Jjp5hrC5/saZwUw==
+hexo-asset-link@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/hexo-asset-link/-/hexo-asset-link-2.2.2.tgz#1985df3d982778af1a97d664b04cd04b20dfe3d0"
+  integrity sha512-wJDngeQXJic2CStUVIKqDdV16Fkh5pwliV8hEyLjeBfY7YoYIEeuDsY+n2VPRIXomaw4GnFG6jVVBne7lrHY1w==
 
 hexo-cli@^4.3.0:
   version "4.3.0"
@@ -799,12 +799,7 @@ hexo@^6.3.0:
     titlecase "^1.1.3"
     warehouse "^4.0.2"
 
-highlight.js@^11.0.1, highlight.js@^11.5.1, highlight.js@^11.7.0:
-  version "11.7.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.7.0.tgz#3ff0165bc843f8c9bce1fd89e2fda9143d24b11e"
-  integrity sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==
-
-highlight.js@^11.6.0:
+highlight.js@^11.0.1, highlight.js@^11.5.1, highlight.js@^11.6.0, highlight.js@^11.7.0:
   version "11.7.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.7.0.tgz#3ff0165bc843f8c9bce1fd89e2fda9143d24b11e"
   integrity sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==
